@@ -1,0 +1,338 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Salon Website Our Services</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+   <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          fontFamily: {
+            poppins: ['Poppins', 'sans-serif'],
+          }
+        }
+      }
+    }
+  </script>
+
+  <style>
+    body {
+      font-family: 'Poppins', sans-serif;
+    }
+  </style>
+</head>
+<body>
+   <!-- Hot Pink – #FF69B4 (attention grabber)
+
+Light Pink – #FFD1DC (soft sections)
+
+Deep Purple – #800080 (royal luxury touch)
+
+White – #FFFFFF (clean background)
+
+Gold Accent – #F4C430 (premium feel) -->
+    <header id="navbar" class="fixed top-0 left-0 w-full h-[90px] z-50 transition-colors duration-300 bg-transparent">
+  <div class="flex items-center justify-between px-6 h-full">
+
+    <!-- Logo -->
+    <div>
+      <img class="w-[100px] h-[100px]" 
+           src="./assets/imags for hair and logos/Premium_Vector___Scissors_and_comb_stylist_silhouette_Design_for_a_beauty_salon-removebg-preview.png">
+    </div>
+
+    <!-- Desktop Menu -->
+    <div class="hidden md:block">
+      <ul class="flex gap-10">
+        <li class="font-bold text-xl text-white hover:text-[#FFD1DC] hover:underline"><a href="./index.html">Home</a></li>
+        <li class="font-bold text-xl text-white hover:text-[#FFD1DC] hover:underline"><a href="./about.html">About</a></li>
+        <li class="font-bold text-xl text-white hover:text-[#FFD1DC] hover:underline"><a href="./service.html">Service</a></li>
+        <li class="font-bold text-xl text-white hover:text-[#FFD1DC] hover:underline"><a href="./gallery.html">Gallery</a></li>
+        <li class="font-bold text-xl text-white hover:text-[#FFD1DC] hover:underline"><a href="./contact.html">Contact</a></li>
+      </ul>
+    </div>
+
+    <!-- Mobile Hamburger -->
+    <div class="md:hidden">
+      <button id="menu-btn">
+        <img class="w-[40px] h-[40px]" src="./assets/imags for hair and logos/menus.png" alt="Menu">
+      </button>
+    </div>
+  </div>
+
+  <!-- Mobile Overlay -->
+  <div id="overlay" class="hidden fixed inset-0 bg-black/50 z-40"></div>
+
+  <!-- Mobile Slide-In Menu -->
+  <div id="mobile-menu" class="fixed top-0 right-[-100%] h-full w-64 bg-[#800080] flex flex-col items-center justify-center space-y-8 transition-right duration-300 z-50">
+    <a href="./index.html" class="font-bold text-xl text-white hover:text-[#FFD1DC] hover:underline">Home</a>
+    <a href="./about.html" class="font-bold text-xl text-white hover:text-[#FFD1DC] hover:underline">About</a>
+    <a href="./service.html" class="font-bold text-xl text-white hover:text-[#FFD1DC] hover:underline">Service</a>
+    <a href="./gallery.html" class="font-bold text-xl text-white hover:text-[#FFD1DC] hover:underline">Gallery</a>
+    <a href="./contact.html" class="font-bold text-xl text-white hover:text-[#FFD1DC] hover:underline">Contact</a>
+  </div>
+</header>
+
+
+<main class="mt-12">
+  <h1 class="text-center text-3xl md:text-4xl text-[#FFD1DC] font-bold mb-16">
+    Our Services
+  </h1>
+
+  <div class="flex flex-col md:grid md:grid-cols-3 gap-8 px-4">
+    
+  <div class="flex-1 max-w-sm mx-auto">
+    <img src="./assets/images for makeup/download (14).jpeg" class="w-full h-auto rounded-lg shadow-md">
+    <p class="text-[#FF69B4] text-2xl font-bold text-center mt-4">   
+      Makeup tailored to your style.
+    </p>
+    <p class="text-[#800080] text-center mt-2">
+      At [Your Business Name], we deal with makeups for every occasion 
+      from soft casual looks to glamorous party styles and elegant bridal makeovers. 
+      passion is to enhance your natural beauty with flawless finishes,
+      giving you confidence that shines wherever you go.
+    </p>
+  </div>
+
+  <div class="flex-1 max-w-sm mx-auto">
+    <img src="./assets/images for nails/download (4).jpeg" class="w-full h-auto rounded-lg shadow-md">
+    <p class="text-[#FF69B4] text-2xl font-bold text-center mt-4">
+      Manicures tailored to your beauty.
+    </p>
+    <p class="text-[#800080] text-center mt-2">
+      we provide expert nail care and stunning manicures designed to suit your unique style. 
+      From simple polish to elegant nail art, we pay attention to every detail,
+    </p>
+  </div>
+
+  <div class="flex-1 max-w-sm mx-auto">
+    <img src="./assets/imags for hair and logos/download (6).jpeg" class="w-full h-auto rounded-lg shadow-md">
+    <p class="text-[#FF69B4] text-2xl font-bold text-center mt-4">
+      Haircuts tailored to your elegance.
+    </p>
+    <p class="text-[#800080] text-center mt-2">
+      we specialize in women’s haircuts that highlight your natural beauty and confidence. 
+      Whether you prefer a fresh trim, a stylish new look, 
+      or a classic cut, our experts ensure precision and elegance with every style.
+    </p>
+  </div>
+
+  <div class="flex-1 max-w-sm mx-auto">
+    <img src="./assets/imags for hair and logos/Bring your wig for revamping I just launched my brand yesterday.jpeg" class="w-full h-auto rounded-lg shadow-md">
+    <p class="text-[#FF69B4] text-2xl font-bold text-center mt-4">
+      Wigs tailored to your style.
+    </p>
+    <p class="text-[#800080] text-center mt-2">
+      we offer premium wigs that blend seamlessly with your style and personality. 
+      From natural everyday looks to bold statement pieces, 
+      our collection is designed to give you comfort, confidence, and beauty in every occasion.
+    </p>
+  </div>
+
+  <div class="flex-1 max-w-sm mx-auto">
+    <img src="./assets/imags for hair and logos/Amazon Clothing Finds 2025.jpeg" class="w-full h-auto rounded-lg shadow-md">
+    <p class="text-[#FF69B4] text-2xl font-bold text-center mt-4">
+      Natural plaits
+    </p>
+    <p class="text-[#800080] text-center mt-2">
+      we create beautiful braids that celebrate your natural hair and unique style.  
+      From simple cornrows to intricate patterns, our braiding experts combine skill and creativity to give you protective styles that are elegant, lasting, and comfortable.
+    </p>
+  </div>
+     
+  <div class="flex-1 max-w-sm mx-auto">
+    <img src="./assets/imags for hair and logos/download (11).jpeg" class="w-full h-auto rounded-lg shadow-md">
+    <p class="text-[#FF69B4] text-2xl font-bold text-center mt-4">
+      Weaving
+    </p>
+    <p class="text-[#800080] text-center mt-2">
+      We specialize in stylish weaves and braids with quality extensions that add length, volume, and versatility to your look.  
+  From box braids to Ghana weaving and other creative styles, our experts craft designs that are protective, elegant, and made to last.
+    </p>
+  </div>
+
+  <div class="flex-1 max-w-sm mx-auto">
+    <img src="./assets/imags for hair and logos/new-pic.jpeg" class="w-full h-auto rounded-lg shadow-md">
+    <p class="text-[#FF69B4] text-2xl font-bold text-center mt-4">
+      Hair Color
+    </p>
+    <p class="text-[#800080] text-center mt-2">
+      Lorem ipsum dolor sit, amet consectetur adipisicing elit. Nemo pariatur debitis quidem, 
+      iure amet sunt suscipit accusamus sequi quam,
+       eius mollitia nam laudantium consequuntur corrupti molestias placeat in beatae explicabo.
+    </p>
+  </div>
+
+  <div class="flex-1 max-w-sm mx-auto">
+    <img src="./assets/imags for hair and logos/Hair treatment Photos - Download Free High-Quality Pictures _ Freepik.jpeg" class="w-full h-auto rounded-lg shadow-md">
+    <p class="text-[#FF69B4] text-2xl font-bold text-center mt-4">
+      Hair Treatment
+    </p>
+    <p class="text-[#800080] text-center mt-2">
+     Lorem ipsum, dolor sit amet consectetur adipisicing elit. Aliquid similique,
+      dolores nesciunt magnam illo nobis consequuntur earum quos laborum enim et vitae animi ea, 
+     delectus architecto odio esse necessitatibus alias?
+    </p>
+  </div>
+
+
+  <div class="flex-1 max-w-sm mx-auto">
+    <img src="./assets/imags for hair and logos/hairflunt.jpeg" class="w-full h-auto rounded-lg shadow-md">
+    <p class="text-[#FF69B4] text-2xl font-bold text-center mt-4">
+      Hair Wash
+    </p>
+    <p class="text-[#800080] text-center mt-2">
+      Lorem ipsum dolor, sit amet consectetur adipisicing elit.
+       Totam, ad? Nam fugit a consectetur consequatur, quis reprehenderit cupiditate sit, 
+      sint eligendi laborum itaque aspernatur voluptatem sunt voluptatibus minus iusto. Hic.
+    </p>
+  </div>
+  
+</div>
+
+</main>
+
+
+
+<h1 id="faq" class="text-center text-3xl md:text-4xl text-[#FFD1DC] font-bold mb-16 mt-32">
+  Frequently Asked Questions
+</h1>
+
+
+
+
+
+
+
+<div class="w-full px-4 sm:px-8 md:px-32 flex flex-col md:flex-row justify-between gap-10">
+  <div class="flex-1">
+    <h1 class="text-[#800080] text-2xl font-bold text-center mb-4">How do I book an appointment?</h1>
+    <p class="text-gray-500 text-center text-base sm:text-lg leading-relaxed">
+      To book an appointment, simply click on any “Book” button on our website. 
+      <span class="font-bold text-xl text-[#FF69B4]">You’ll be directed to our WhatsApp,</span> where we can chat and finalize your booking.
+    </p>
+  </div>
+
+  <div class="flex-1 mt-10 md:mt-0">
+    <h1 class="text-[#800080] text-2xl font-bold text-center mb-4">Can I bring my own products for hair or nails?</h1>
+    <p class="text-gray-500 text-center text-base sm:text-lg leading-relaxed">
+     Lorem ipsum dolor, sit amet consectetur adipisicing elit. 
+     Illum, quidem quas. Itaque, 
+     veritatis repudiandae omnis ipsa ullam non nihil, 
+     ut ducimus nesciunt optio explicabo illo rerum magni minus impedit unde.
+    </p>
+  </div>
+</div>
+
+
+
+<div>
+<div>
+  <div class="w-full px-4 sm:px-8 md:px-32 flex flex-col md:flex-row justify-between gap-10 mt-8">
+    <div class="flex-1">
+      <h1 class="text-[#800080] text-2xl font-bold text-center mb-4">Do I need to book an appointment in advance?</h1>
+      <p class="text-gray-500 text-center text-base sm:text-lg leading-relaxed">
+       Yes, we recommend booking at least 24–48 hours ahead to secure your preferred time.
+      </p>
+    </div>
+
+    <div class="flex-1 mt-10 md:mt-0">
+      <h1 class="text-[#800080] text-2xl font-bold text-center mb-4">Do you offer home services?</h1>
+      <p class="text-gray-500 text-center text-base sm:text-lg leading-relaxed">
+        Lorem ipsum dolor, sit amet consectetur adipisicing elit. 
+     Illum, quidem quas. Itaque, 
+     veritatis repudiandae omnis ipsa ullam non nihil, 
+     ut ducimus nesciunt optio explicabo illo rerum magni minus impedit unde.
+      </p>
+    </div>
+  </div>
+
+  <div class="w-full px-4 sm:px-8 md:px-32 flex justify-center mt-8" id="contact">
+    <a href="./index.html#question" class="bg-[#FF69B4] px-6 py-3 rounded-lg text-white font-semibold hover:bg-[#800080] transition">
+      Ask Question
+    </a>
+  </div>
+</div>
+
+
+<footer class="w-full bg-black text-white px-6 py-12 mt-12">
+  <div class="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-4 gap-12">
+    
+    <!-- Logo & About -->
+    <div class="space-y-4 text-center md:text-left">
+      <img src="./assets/imags for hair and logos/Premium_Vector___Scissors_and_comb_stylist_silhouette_Design_for_a_beauty_salon-removebg-preview.png" 
+           alt="Salon Logo"
+           class="w-[100px] h-[100px] mx-auto md:mx-0 bg-[#800080] rounded">
+      <p class="text-sm leading-relaxed">
+        Welcome to our salon, where beauty meets professionalism.  
+        We specialize in <span class="text-[#FF69B4] font-semibold">makeup, nails, and hair</span> — ensuring you always leave glowing with confidence.
+      </p>
+    </div>
+
+    <!-- Quick Links -->
+    <div>
+      <h3 class="text-2xl font-bold text-[#FF69B4] mb-4 text-center md:text-left">Quick Links</h3>
+      <ul class="space-y-2 text-center md:text-left">
+        <li><a href="./index.html" class="hover:text-[#FFD1DC] transition">Home</a></li>
+        <li><a href="./about.html" class="hover:text-[#FFD1DC] transition">About Us</a></li>
+        <li><a href="./service.html#faq" class="hover:text-[#FFD1DC] transition">FAQ</a></li>
+        <li><a href="./contact.html" class="hover:text-[#FFD1DC] transition">Contact</a></li>
+        <li><a href="./contact.html#location" class="hover:text-[#FFD1DC] transition">Location</a></li>
+        <li><a href="./service.html" class="hover:text-[#FFD1DC] transition">Services</a></li>
+        <li><a href="./gallery.html" class="hover:text-[#FFD1DC] transition">Gallery</a></li>
+        <li><a href="./about.html#team" class="hover:text-[#FFD1DC] transition">Our Team</a></li>
+        <li><a href="./index.html#pricing" class="hover:text-[#FFD1DC] transition">Pricing</a></li>
+      </ul>
+    </div>
+
+    <!-- Social Media -->
+    <div>
+      <h3 class="text-2xl font-bold text-[#FF69B4] mb-4 text-center md:text-left">Follow Us</h3>
+      <div class="flex justify-center md:justify-start gap-5">
+        <a href="http://wa.me/2348134260378" class="hover:scale-110 transition">
+          <img src="./assets/imags for hair and logos/whatsapp.png" class="w-[40px] h-[40px]" alt="WhatsApp">
+        </a>
+        <a href="https://www.facebook.com/share/19fTZcdPKN/?mibextid=wwXIfr" class="hover:scale-110 transition">
+          <img src="./assets/imags for hair and logos/facebook.png" class="w-[40px] h-[40px]" alt="Facebook">
+        </a>
+        <a href="https://www.instagram.com/milimoon12/" class="hover:scale-110 transition">
+          <img src="./assets/imags for hair and logos/instagram.png" class="w-[40px] h-[40px]" alt="Instagram">
+        </a>
+      </div>
+    </div>
+
+    <!-- Contact Info -->
+    <div>
+      <h3 class="text-2xl font-bold text-[#FF69B4] mb-4 text-center md:text-left">Contact</h3>
+      <ul class="space-y-3 text-center md:text-left">
+        <li>
+          <a href="mailto:christopherolawale31@gmail.com" class="flex justify-center md:justify-start items-center gap-2 hover:text-[#FFD1DC]">
+            📧 <span>yourbusiness@gmail.com</span>
+          </a>
+        </li>
+        <li>
+          <a href="tel:+2348012345678" class="flex justify-center md:justify-start items-center gap-2 hover:text-[#FFD1DC]">
+            📞 <span>+234 801 234 5678</span>
+          </a>
+        </li>
+        <li>
+          <a href="https://maps.google.com/?q=Your+Business+Address" target="_blank" class="flex justify-center md:justify-start items-center gap-2 hover:text-[#FFD1DC]">
+            📍 <span>123 Beauty Street, Lagos</span>
+          </a>
+        </li>
+      </ul>
+    </div>
+  </div>
+
+  <!-- Copyright -->
+  <div class="border-t border-gray-700 mt-12 pt-6 text-center text-sm">
+    © 2025 Salon Website. All Rights Reserved.
+  </div>
+</footer>
+<script src="./script.js"></script>
+</body>
+</html>
