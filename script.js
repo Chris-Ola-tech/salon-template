@@ -153,4 +153,9 @@ document.getElementById("sendBtn").addEventListener("click", function () {
 
 
 
-  
+   document.querySelectorAll('.group').forEach(card => {
+    card.addEventListener('click', () => {
+      const overlay = card.querySelector('div.absolute');
+      overlay.classList.toggle('opacity-100');
+    });
+  });
