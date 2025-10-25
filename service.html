@@ -4,336 +4,908 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Salon Website Our Services</title>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
   <link rel="icon" type="image/png" href="./assets/images for nails/hair.png">
    <script src="https://cdn.tailwindcss.com"></script>
-  <script>
-    tailwind.config = {
-      theme: {
-        extend: {
-          fontFamily: {
-            poppins: ['Poppins', 'sans-serif'],
-          }
-        }
-      }
-    }
-  </script>
-
-  <style>
-    body {
-      font-family: 'Poppins', sans-serif;
-    }
-  </style>
+  <link rel="stylesheet" href="./service.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 </head>
 <body>
-   <!-- Hot Pink – #FF69B4 (attention grabber)
-
-Light Pink – #FFD1DC (soft sections)
-
-Deep Purple – #800080 (royal luxury touch)
-
-White – #FFFFFF (clean background)
-
-Gold Accent – #F4C430 (premium feel) -->
-    <header id="navbar" class="fixed top-0 left-0 w-full h-[90px] z-50 transition-colors duration-300 bg-transparent">
-  <div class="flex items-center justify-between px-6 h-full">
+   <header id="navbar" class="fixed top-0 left-0 w-full z-50 transition-all duration-300 bg-transparent">
+  <div class="flex items-center justify-between px-6 lg:px-10 h-20 lg:h-24 max-w-[1400px] mx-auto">
 
     <!-- Logo -->
-    <div>
-      <img class="w-[100px] h-[100px]" 
-           src="./assets/imags for hair and logos/Premium_Vector___Scissors_and_comb_stylist_silhouette_Design_for_a_beauty_salon-removebg-preview.png">
+    <div class="logo-container">
+      <a href="./homepage.html">
+        <img class="w-[80px] h-[80px] lg:w-[90px] lg:h-[90px] drop-shadow-lg" 
+             src="./assets/imags for hair and logos/Premium_Vector___Scissors_and_comb_stylist_silhouette_Design_for_a_beauty_salon-removebg-preview.png"
+             alt="Luxury Salon Logo">
+      </a>
     </div>
 
     <!-- Desktop Menu -->
-    <div class="hidden md:block">
-      <ul class="flex gap-10">
-        <li class="font-bold text-xl text-white hover:text-[#FFD1DC] hover:underline"><a href="./index.html">Home</a></li>
-        <li class="font-bold text-xl text-white hover:text-[#FFD1DC] hover:underline"><a href="./about.html">About</a></li>
-        <li class="font-bold text-xl text-white hover:text-[#FFD1DC] hover:underline"><a href="./service.html">Service</a></li>
-        <li class="font-bold text-xl text-white hover:text-[#FFD1DC] hover:underline"><a href="./gallery.html">Gallery</a></li>
-        <li class="font-bold text-xl text-white hover:text-[#FFD1DC] hover:underline"><a href="./contact.html">Contact</a></li>
+    <nav class="hidden md:block">
+      <ul class="flex gap-8 lg:gap-10">
+        <li>
+          <a href="./homepage.html" class="nav-link font-semibold text-lg lg:text-xl text-white hover:text-[#FFD1DC] transition-colors">
+            Home
+          </a>
+        </li>
+        <li>
+          <a href="./about.html" class="nav-link font-semibold text-lg lg:text-xl text-white hover:text-[#FFD1DC] transition-colors">
+            About
+          </a>
+        </li>
+        <li>
+          <a href="./service.html" class="nav-link font-semibold text-lg lg:text-xl text-white hover:text-[#FFD1DC] transition-colors">
+            Service
+          </a>
+        </li>
+        <li>
+          <a href="./gallery.html" class="nav-link font-semibold text-lg lg:text-xl text-white hover:text-[#FFD1DC] transition-colors">
+            Gallery
+          </a>
+        </li>
+        <li>
+          <a href="./contact.html" class="nav-link font-semibold text-lg lg:text-xl text-white hover:text-[#FFD1DC] transition-colors">
+            Contact
+          </a>
+        </li>
       </ul>
-    </div>
+    </nav>
+
+    <!-- Book Now Button (Desktop) -->
+    <a href="./contact.html" class="hidden md:block px-6 lg:px-8 py-3 bg-gradient-to-r from-[#FF69B4] to-[#800080] text-white font-bold text-base lg:text-lg rounded-full hover:shadow-2xl hover:scale-105 transition-all duration-300">
+      Book Now
+    </a>
 
     <!-- Mobile Hamburger -->
-    <div class="md:hidden">
-      <button id="menu-btn">
-        <img class="w-[40px] h-[40px]" src="./assets/imags for hair and logos/menus.png" alt="Menu">
-      </button>
-    </div>
+    <button id="menu-btn" class="md:hidden hamburger" aria-label="Toggle menu">
+      <span></span>
+      <span></span>
+      <span></span>
+    </button>
   </div>
 
   <!-- Mobile Overlay -->
-  <div id="overlay" class="hidden fixed inset-0 bg-black/50 z-40"></div>
+  <div id="overlay" class="fixed inset-0 bg-black/60 backdrop-blur-sm z-40 opacity-0 pointer-events-none transition-opacity duration-300"></div>
 
   <!-- Mobile Slide-In Menu -->
-  <div id="mobile-menu" class="fixed top-0 right-[-100%] h-full w-64 bg-[#800080] flex flex-col items-center justify-center space-y-8 transition-right duration-300 z-50">
-    <a href="./index.html" class="font-bold text-xl text-white hover:text-[#FFD1DC] hover:underline">Home</a>
-    <a href="./about.html" class="font-bold text-xl text-white hover:text-[#FFD1DC] hover:underline">About</a>
-    <a href="./service.html" class="font-bold text-xl text-white hover:text-[#FFD1DC] hover:underline">Service</a>
-    <a href="./gallery.html" class="font-bold text-xl text-white hover:text-[#FFD1DC] hover:underline">Gallery</a>
-    <a href="./contact.html" class="font-bold text-xl text-white hover:text-[#FFD1DC] hover:underline">Contact</a>
+  <div id="mobile-menu" class="mobile-menu fixed top-0 right-0 h-full w-80 max-w-[85vw] bg-gradient-to-br from-[#800080] via-[#9932CC] to-[#FF69B4] shadow-2xl z-50 transform translate-x-full">
+    <div class="flex flex-col h-full pt-24 pb-8 px-6">
+      <nav class="flex-1 space-y-2">
+        <a href="./homepage.html" class="mobile-menu-link block px-6 py-4 text-white font-semibold text-lg hover:bg-white/10 rounded-xl transition-all duration-300">
+          Home
+        </a>
+        <a href="./about.html" class="mobile-menu-link block px-6 py-4 text-white font-semibold text-lg hover:bg-white/10 rounded-xl transition-all duration-300">
+          About
+        </a>
+        <a href="./service.html" class="mobile-menu-link block px-6 py-4 text-white font-semibold text-lg hover:bg-white/10 rounded-xl transition-all duration-300">
+          Service
+        </a>
+        <a href="./gallery.html" class="mobile-menu-link block px-6 py-4 text-white font-semibold text-lg hover:bg-white/10 rounded-xl transition-all duration-300">
+          Gallery
+        </a>
+        <a href="./contact.html" class="mobile-menu-link block px-6 py-4 text-white font-semibold text-lg hover:bg-white/10 rounded-xl transition-all duration-300">
+          Contact
+        </a>
+      </nav>
+      <a href="./contact.html" class="block text-center px-6 py-4 bg-white text-[#800080] font-bold text-lg rounded-full hover:bg-[#FFD1DC] transition-all duration-300 shadow-lg hover:shadow-xl">
+        Book Appointment
+      </a>
+    </div>
   </div>
 </header>
 
+<!-- Hero Section -->
+<section class="relative min-h-screen flex items-center justify-center overflow-hidden pt-20">
+  <!-- Background Image -->
+  <div class="absolute inset-0 bg-cover bg-center" style="background-image: url('./assets/images for makeup/download (14).jpeg');">
+    <div class="hero-gradient absolute inset-0"></div>
+  </div>
 
-<main class="mt-12">
-  <h1 class="text-center text-3xl md:text-4xl text-[#FFD1DC] font-bold mb-16">
-    Our Services
-  </h1>
+  <!-- Animated Decorative Elements -->
+  <div class="absolute top-20 left-10 w-20 h-20 bg-[#FF69B4]/20 rounded-full blur-3xl floating-animation"></div>
+  <div class="absolute bottom-20 right-10 w-32 h-32 bg-[#F4C430]/20 rounded-full blur-3xl floating-animation" style="animation-delay: 1s;"></div>
+  <div class="absolute top-1/2 right-1/4 w-16 h-16 bg-white/10 rounded-full blur-2xl floating-animation" style="animation-delay: 2s;"></div>
 
-  <div class="flex flex-col md:grid md:grid-cols-3 gap-8 px-4">
+  <!-- Hero Content -->
+  <div class="relative z-10 text-center px-4 sm:px-6 max-w-5xl mx-auto py-20">
+    <!-- Badge -->
+    <div class="fade-in-up delay-100 inline-block mb-6">
+      <span class="px-6 py-2 bg-white/20 backdrop-blur-md border border-white/30 rounded-full text-white text-xs sm:text-sm font-bold tracking-wider uppercase">
+        ✨ Premium Beauty Services
+      </span>
+    </div>
+
+    <!-- Main Title -->
+    <h1 class="fade-in-up delay-200 text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold text-white mb-6 leading-tight">
+      Transform Your Look<br>
+      <span class="text-[#F4C430]">With Expert Care</span>
+    </h1>
+
+    <!-- Description -->
+    <p class="fade-in-up delay-300 text-base sm:text-lg md:text-xl text-white/90 mb-10 max-w-3xl mx-auto">
+      From stunning makeup to flawless nails and gorgeous hair styling—discover our complete range of professional beauty treatments
+    </p>
+
+    <!-- CTA Buttons -->
+    <div class="fade-in-up delay-400 flex flex-col sm:flex-row gap-4 justify-center items-center mb-16">
+      <a href="#services" class="px-8 sm:px-10 py-4 bg-gradient-to-r from-[#FF69B4] to-[#800080] text-white font-bold text-base sm:text-lg rounded-full hover:shadow-2xl hover:scale-105 transition-all duration-300 w-full sm:w-auto">
+        Explore Services
+      </a>
+      <a href="./contact.html" class="px-8 sm:px-10 py-4 bg-white/10 backdrop-blur-md border-2 border-white text-white font-bold text-base sm:text-lg rounded-full hover:bg-white hover:text-[#800080] transition-all duration-300 w-full sm:w-auto">
+        Book Appointment
+      </a>
+    </div>
+
+    <!-- Service Icons Preview -->
+    <div class="fade-in-up delay-500 flex flex-wrap justify-center gap-6 sm:gap-8 lg:gap-10">
+      <div class="service-icon text-center">
+        <div class="w-16 h-16 sm:w-20 sm:h-20 mx-auto mb-3 bg-white/10 backdrop-blur-md rounded-full flex items-center justify-center">
+          <svg class="w-8 h-8 sm:w-10 sm:h-10 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 3v4M3 5h4M6 17v4m-2-2h4m5-16l2.286 6.857L21 12l-5.714 2.143L13 21l-2.286-6.857L5 12l5.714-2.143L13 3z"/>
+          </svg>
+        </div>
+        <p class="text-white font-semibold text-sm">Makeup</p>
+      </div>
+
+      <div class="service-icon text-center">
+        <div class="w-16 h-16 sm:w-20 sm:h-20 mx-auto mb-3 bg-white/10 backdrop-blur-md rounded-full flex items-center justify-center">
+          <svg class="w-8 h-8 sm:w-10 sm:h-10 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M7 21a4 4 0 01-4-4V5a2 2 0 012-2h4a2 2 0 012 2v12a4 4 0 01-4 4zm0 0h12a2 2 0 002-2v-4a2 2 0 00-2-2h-2.343M11 7.343l1.657-1.657a2 2 0 012.828 0l2.829 2.829a2 2 0 010 2.828l-8.486 8.485M7 17h.01"/>
+          </svg>
+        </div>
+        <p class="text-white font-semibold text-sm">Nails</p>
+      </div>
+
+      <div class="service-icon text-center">
+        <div class="w-16 h-16 sm:w-20 sm:h-20 mx-auto mb-3 bg-white/10 backdrop-blur-md rounded-full flex items-center justify-center">
+          <svg class="w-8 h-8 sm:w-10 sm:h-10 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14.828 14.828a4 4 0 01-5.656 0M9 10h.01M15 10h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/>
+          </svg>
+        </div>
+        <p class="text-white font-semibold text-sm">Hair</p>
+      </div>
+
+      <div class="service-icon text-center">
+        <div class="w-16 h-16 sm:w-20 sm:h-20 mx-auto mb-3 bg-white/10 backdrop-blur-md rounded-full flex items-center justify-center">
+          <svg class="w-8 h-8 sm:w-10 sm:h-10 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v13m0-13V6a2 2 0 112 2h-2zm0 0V5.5A2.5 2.5 0 109.5 8H12zm-7 4h14M5 12a2 2 0 110-4h14a2 2 0 110 4M5 12v7a2 2 0 002 2h10a2 2 0 002-2v-7"/>
+          </svg>
+        </div>
+        <p class="text-white font-semibold text-sm">Packages</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- Scroll Indicator -->
+  <div class="absolute bottom-8 left-1/2 transform -translate-x-1/2 bounce">
+    <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 14l-7 7m0 0l-7-7m7 7V3"></path>
+    </svg>
+  </div>
+</section>>
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Our Services</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+ 
+</head>
+<body class="bg-gradient-to-br from-pink-50 via-purple-50 to-pink-100">
+
+<main class="py-16 md:py-20 px-4 sm:px-6 lg:px-8">
+  <div class="max-w-7xl mx-auto">
     
-  <div class="flex-1 max-w-sm mx-auto">
-    <img src="./assets/images for makeup/download (14).jpeg" class="w-full h-auto rounded-lg shadow-md">
-    <p class="text-[#FF69B4] text-2xl font-bold text-center mt-4">   
-      Makeup tailored to your style.
-    </p>
-    <p class="text-[#800080] text-center mt-2">
-      At [Your Business Name], we deal with makeups for every occasion 
-      from soft casual looks to glamorous party styles and elegant bridal makeovers. 
-      passion is to enhance your natural beauty with flawless finishes,
-      giving you confidence that shines wherever you go.
-    </p>
-  </div>
-
-  <div class="flex-1 max-w-sm mx-auto">
-    <img src="./assets/images for nails/download (4).jpeg" class="w-full h-auto rounded-lg shadow-md">
-    <p class="text-[#FF69B4] text-2xl font-bold text-center mt-4">
-      Manicures tailored to your beauty.
-    </p>
-    <p class="text-[#800080] text-center mt-2">
-      we provide expert nail care and stunning manicures designed to suit your unique style. 
-      From simple polish to elegant nail art, we pay attention to every detail,
-    </p>
-  </div>
-
-  <div class="flex-1 max-w-sm mx-auto">
-    <img src="./assets/imags for hair and logos/download (6).jpeg" class="w-full h-auto rounded-lg shadow-md">
-    <p class="text-[#FF69B4] text-2xl font-bold text-center mt-4">
-      Haircuts tailored to your elegance.
-    </p>
-    <p class="text-[#800080] text-center mt-2">
-      we specialize in women’s haircuts that highlight your natural beauty and confidence. 
-      Whether you prefer a fresh trim, a stylish new look, 
-      or a classic cut, our experts ensure precision and elegance with every style.
-    </p>
-  </div>
-
-  <div class="flex-1 max-w-sm mx-auto">
-    <img src="./assets/imags for hair and logos/Bring your wig for revamping I just launched my brand yesterday.jpeg" class="w-full h-auto rounded-lg shadow-md">
-    <p class="text-[#FF69B4] text-2xl font-bold text-center mt-4">
-      Wigs tailored to your style.
-    </p>
-    <p class="text-[#800080] text-center mt-2">
-      we offer premium wigs that blend seamlessly with your style and personality. 
-      From natural everyday looks to bold statement pieces, 
-      our collection is designed to give you comfort, confidence, and beauty in every occasion.
-    </p>
-  </div>
-
-  <div class="flex-1 max-w-sm mx-auto">
-    <img src="./assets/imags for hair and logos/Amazon Clothing Finds 2025.jpeg" class="w-full h-auto rounded-lg shadow-md">
-    <p class="text-[#FF69B4] text-2xl font-bold text-center mt-4">
-      Natural plaits
-    </p>
-    <p class="text-[#800080] text-center mt-2">
-      we create beautiful braids that celebrate your natural hair and unique style.  
-      From simple cornrows to intricate patterns, our braiding experts combine skill and creativity to give you protective styles that are elegant, lasting, and comfortable.
-    </p>
-  </div>
-     
-  <div class="flex-1 max-w-sm mx-auto">
-    <img src="./assets/imags for hair and logos/download (11).jpeg" class="w-full h-auto rounded-lg shadow-md">
-    <p class="text-[#FF69B4] text-2xl font-bold text-center mt-4">
-      Weaving
-    </p>
-    <p class="text-[#800080] text-center mt-2">
-      We specialize in stylish weaves and braids with quality extensions that add length, volume, and versatility to your look.  
-  From box braids to Ghana weaving and other creative styles, our experts craft designs that are protective, elegant, and made to last.
-    </p>
-  </div>
-
-  <div class="flex-1 max-w-sm mx-auto">
-    <img src="./assets/imags for hair and logos/new-pic.jpeg" class="w-full h-auto rounded-lg shadow-md">
-    <p class="text-[#FF69B4] text-2xl font-bold text-center mt-4">
-      Hair Color
-    </p>
-    <p class="text-[#800080] text-center mt-2">
-      Lorem ipsum dolor sit, amet consectetur adipisicing elit. Nemo pariatur debitis quidem, 
-      iure amet sunt suscipit accusamus sequi quam,
-       eius mollitia nam laudantium consequuntur corrupti molestias placeat in beatae explicabo.
-    </p>
-  </div>
-
-  <div class="flex-1 max-w-sm mx-auto">
-    <img src="./assets/imags for hair and logos/Hair treatment Photos - Download Free High-Quality Pictures _ Freepik.jpeg" class="w-full h-auto rounded-lg shadow-md">
-    <p class="text-[#FF69B4] text-2xl font-bold text-center mt-4">
-      Hair Treatment
-    </p>
-    <p class="text-[#800080] text-center mt-2">
-     Lorem ipsum, dolor sit amet consectetur adipisicing elit. Aliquid similique,
-      dolores nesciunt magnam illo nobis consequuntur earum quos laborum enim et vitae animi ea, 
-     delectus architecto odio esse necessitatibus alias?
-    </p>
-  </div>
-
-
-  <div class="flex-1 max-w-sm mx-auto">
-    <img src="./assets/imags for hair and logos/hairflunt.jpeg" class="w-full h-auto rounded-lg shadow-md">
-    <p class="text-[#FF69B4] text-2xl font-bold text-center mt-4">
-      Hair Wash
-    </p>
-    <p class="text-[#800080] text-center mt-2">
-      Lorem ipsum dolor, sit amet consectetur adipisicing elit.
-       Totam, ad? Nam fugit a consectetur consequatur, quis reprehenderit cupiditate sit, 
-      sint eligendi laborum itaque aspernatur voluptatem sunt voluptatibus minus iusto. Hic.
-    </p>
-  </div>
-  
-</div>
-
-</main>
-
-
-
-<h1 id="faq" class="text-center text-3xl md:text-4xl text-[#FFD1DC] font-bold mb-16 mt-32">
-  Frequently Asked Questions
-</h1>
-
-
-
-
-
-
-
-<div class="w-full px-4 sm:px-8 md:px-32 flex flex-col md:flex-row justify-between gap-10">
-  <div class="flex-1">
-    <h1 class="text-[#800080] text-2xl font-bold text-center mb-4">How do I book an appointment?</h1>
-    <p class="text-gray-500 text-center text-base sm:text-lg leading-relaxed">
-      To book an appointment, simply click on any “Book” button on our website. 
-      <span class="font-bold text-xl text-[#FF69B4]">You’ll be directed to our WhatsApp,</span> where we can chat and finalize your booking.
-    </p>
-  </div>
-
-  <div class="flex-1 mt-10 md:mt-0">
-    <h1 class="text-[#800080] text-2xl font-bold text-center mb-4">Can I bring my own products for hair or nails?</h1>
-    <p class="text-gray-500 text-center text-base sm:text-lg leading-relaxed">
-     Lorem ipsum dolor, sit amet consectetur adipisicing elit. 
-     Illum, quidem quas. Itaque, 
-     veritatis repudiandae omnis ipsa ullam non nihil, 
-     ut ducimus nesciunt optio explicabo illo rerum magni minus impedit unde.
-    </p>
-  </div>
-</div>
-
-
-
-<div>
-<div>
-  <div class="w-full px-4 sm:px-8 md:px-32 flex flex-col md:flex-row justify-between gap-10 mt-8">
-    <div class="flex-1">
-      <h1 class="text-[#800080] text-2xl font-bold text-center mb-4">Do I need to book an appointment in advance?</h1>
-      <p class="text-gray-500 text-center text-base sm:text-lg leading-relaxed">
-       Yes, we recommend booking at least 24–48 hours ahead to secure your preferred time.
+    <!-- Section Header -->
+    <div class="text-center mb-16">
+      <p class="text-[#FF69B4] text-sm font-semibold tracking-widest uppercase mb-3">What We Offer</p>
+      <h1 class="typography-serif-elegant text-4xl md:text-5xl lg:text-6xl iridescent-typography-sequence font-bold mb-4">
+        Our Services
+      </h1>
+      <div class="divider-line"></div>
+      <p class="text-gray-600 mt-4 max-w-2xl mx-auto text-base md:text-lg">
+        Discover our comprehensive range of beauty services designed to enhance your natural elegance
       </p>
     </div>
 
-    <div class="flex-1 mt-10 md:mt-0">
-      <h1 class="text-[#800080] text-2xl font-bold text-center mb-4">Do you offer home services?</h1>
-      <p class="text-gray-500 text-center text-base sm:text-lg leading-relaxed">
-        Lorem ipsum dolor, sit amet consectetur adipisicing elit. 
-     Illum, quidem quas. Itaque, 
-     veritatis repudiandae omnis ipsa ullam non nihil, 
-     ut ducimus nesciunt optio explicabo illo rerum magni minus impedit unde.
+    <!-- Services Grid -->
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8" id="servicesGridContainer">
+      
+      <!-- Service 1: Makeup -->
+      <div class="service-presentation-module">
+        <div class="service-visual-container">
+          <span class="service-category-identifier">Makeup</span>
+          <span class="pricing-indicator-badge">From $40</span>
+          <img src="./assets/images for makeup/download (14).jpeg" alt="Professional Makeup Services">
+        </div>
+        <div class="service-description-container">
+          <h3 class="service-title-designation text-2xl font-bold text-[#FF69B4] mb-3">
+            Makeup Artistry
+          </h3>
+          <p class="text-gray-600 leading-relaxed mb-4">
+            Makeup tailored to your style for every occasion — from soft casual looks to glamorous party styles and elegant bridal makeovers. We enhance your natural beauty with flawless finishes, giving you confidence that shines wherever you go.
+          </p>
+          <ul class="service-feature-enumeration">
+            <li>Party & Event Makeup</li>
+            <li>Bridal Makeup Packages</li>
+            <li>Natural Daily Looks</li>
+          </ul>
+          <div class="mt-6">
+            <a href="http://wa.me/2348134260378?text=I'm interested in Makeup services" 
+               class="service-engagement-trigger">
+              <span class="relative z-10">Book Service</span>
+              <svg class="relative z-10 w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"></path>
+              </svg>
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Service 2: Nails -->
+      <div class="service-presentation-module">
+        <div class="service-visual-container">
+          <span class="service-category-identifier">Nails</span>
+          <span class="pricing-indicator-badge">From $20</span>
+          <img src="./assets/images for nails/download (4).jpeg" alt="Professional Nail Services">
+        </div>
+        <div class="service-description-container">
+          <h3 class="service-title-designation text-2xl font-bold text-[#FF69B4] mb-3">
+            Nail Care & Art
+          </h3>
+          <p class="text-gray-600 leading-relaxed mb-4">
+            Expert nail care and stunning manicures designed to suit your unique style. From simple polish to elegant nail art, we pay attention to every detail, ensuring your hands look beautiful and well-groomed.
+          </p>
+          <ul class="service-feature-enumeration">
+            <li>Classic & Gel Manicures</li>
+            <li>Acrylic & Extensions</li>
+            <li>Custom Nail Art Designs</li>
+          </ul>
+          <div class="mt-6">
+            <a href="http://wa.me/2348134260378?text=I'm interested in Nail services" 
+               class="service-engagement-trigger">
+              <span class="relative z-10">Book Service</span>
+              <svg class="relative z-10 w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"></path>
+              </svg>
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Service 3: Haircuts -->
+      <div class="service-presentation-module">
+        <div class="service-visual-container">
+          <span class="service-category-identifier">Hair</span>
+          <span class="pricing-indicator-badge">From $40</span>
+          <img src="./assets/imags for hair and logos/download (6).jpeg" alt="Professional Haircut Services">
+        </div>
+        <div class="service-description-container">
+          <h3 class="service-title-designation text-2xl font-bold text-[#FF69B4] mb-3">
+            Professional Haircuts
+          </h3>
+          <p class="text-gray-600 leading-relaxed mb-4">
+            Women's haircuts that highlight your natural beauty and confidence. Whether you prefer a fresh trim, a stylish new look, or a classic cut, our experts ensure precision and elegance with every style.
+          </p>
+          <ul class="service-feature-enumeration">
+            <li>Precision Cutting & Styling</li>
+            <li>Layered & Textured Cuts</li>
+            <li>Consultation Included</li>
+          </ul>
+          <div class="mt-6">
+            <a href="http://wa.me/2348134260378?text=I'm interested in Haircut services" 
+               class="service-engagement-trigger">
+              <span class="relative z-10">Book Service</span>
+              <svg class="relative z-10 w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"></path>
+              </svg>
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Service 4: Wigs -->
+      <div class="service-presentation-module">
+        <div class="service-visual-container">
+          <span class="service-category-identifier">Wigs</span>
+          <span class="pricing-indicator-badge">From $80</span>
+          <img src="./assets/imags for hair and logos/download (18).jpeg" alt="Premium Wig Services">
+        </div>
+        <div class="service-description-container">
+          <h3 class="service-title-designation text-2xl font-bold text-[#FF69B4] mb-3">
+            Premium Wigs
+          </h3>
+          <p class="text-gray-600 leading-relaxed mb-4">
+            Premium wigs that blend seamlessly with your style and personality. From natural everyday looks to bold statement pieces, our collection gives you comfort, confidence, and beauty for every occasion.
+          </p>
+          <ul class="service-feature-enumeration">
+            <li>Natural & Synthetic Options</li>
+            <li>Custom Fitting & Styling</li>
+            <li>Wig Maintenance Services</li>
+          </ul>
+          <div class="mt-6">
+            <a href="http://wa.me/2348134260378?text=I'm interested in Wig services" 
+               class="service-engagement-trigger">
+              <span class="relative z-10">Book Service</span>
+              <svg class="relative z-10 w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"></path>
+              </svg>
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Service 5: Natural Plaits -->
+      <div class="service-presentation-module">
+        <div class="service-visual-container">
+          <span class="service-category-identifier">Braiding</span>
+          <span class="pricing-indicator-badge">From $50</span>
+          <img src="./assets/imags for hair and logos/Amazon Clothing Finds 2025.jpeg" alt="Natural Braiding Services">
+        </div>
+        <div class="service-description-container">
+          <h3 class="service-title-designation text-2xl font-bold text-[#FF69B4] mb-3">
+            Natural Plaits & Braids
+          </h3>
+          <p class="text-gray-600 leading-relaxed mb-4">
+            Beautiful braids that celebrate your natural hair and unique style. From simple cornrows to intricate patterns, our braiding experts combine skill and creativity to give you protective styles that are elegant, lasting, and comfortable.
+          </p>
+          <ul class="service-feature-enumeration">
+            <li>Cornrows & Box Braids</li>
+            <li>Protective Styling</li>
+            <li>Custom Braid Patterns</li>
+          </ul>
+          <div class="mt-6">
+            <a href="http://wa.me/2348134260378?text=I'm interested in Braiding services" 
+               class="service-engagement-trigger">
+              <span class="relative z-10">Book Service</span>
+              <svg class="relative z-10 w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"></path>
+              </svg>
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Service 6: Weaving -->
+      <div class="service-presentation-module">
+        <div class="service-visual-container">
+          <span class="service-category-identifier">Weaving</span>
+          <span class="pricing-indicator-badge">From $60</span>
+          <img src="./assets/imags for hair and logos/download (11).jpeg" alt="Hair Weaving Services">
+        </div>
+        <div class="service-description-container">
+          <h3 class="service-title-designation text-2xl font-bold text-[#FF69B4] mb-3">
+            Weaving & Extensions
+          </h3>
+          <p class="text-gray-600 leading-relaxed mb-4">
+            Stylish weaves and braids with quality extensions that add length, volume, and versatility to your look. From box braids to Ghana weaving and other creative styles, we craft designs that are protective, elegant, and made to last.
+          </p>
+          <ul class="service-feature-enumeration">
+            <li>Ghana Weaving Styles</li>
+            <li>Quality Hair Extensions</li>
+            <li>Long-Lasting Results</li>
+          </ul>
+          <div class="mt-6">
+            <a href="http://wa.me/2348134260378?text=I'm interested in Weaving services" 
+               class="service-engagement-trigger">
+              <span class="relative z-10">Book Service</span>
+              <svg class="relative z-10 w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"></path>
+              </svg>
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Service 7: Hair Color -->
+      <div class="service-presentation-module">
+        <div class="service-visual-container">
+          <span class="service-category-identifier">Coloring</span>
+          <span class="pricing-indicator-badge">From $70</span>
+          <img src="./assets/imags for hair and logos/new-pic.jpeg" alt="Hair Coloring Services">
+        </div>
+        <div class="service-description-container">
+          <h3 class="service-title-designation text-2xl font-bold text-[#FF69B4] mb-3">
+            Hair Coloring
+          </h3>
+          <p class="text-gray-600 leading-relaxed mb-4">
+            Transform your look with our professional hair coloring services. Whether you want subtle highlights, bold fashion colors, or a complete color transformation, our colorists use premium products to achieve vibrant, lasting results while maintaining hair health.
+          </p>
+          <ul class="service-feature-enumeration">
+            <li>Full Color & Highlights</li>
+            <li>Balayage & Ombre</li>
+            <li>Color Correction Available</li>
+          </ul>
+          <div class="mt-6">
+            <a href="http://wa.me/2348134260378?text=I'm interested in Hair Coloring services" 
+               class="service-engagement-trigger">
+              <span class="relative z-10">Book Service</span>
+              <svg class="relative z-10 w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"></path>
+              </svg>
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Service 8: Hair Treatment -->
+      <div class="service-presentation-module">
+        <div class="service-visual-container">
+          <span class="service-category-identifier">Treatment</span>
+          <span class="pricing-indicator-badge">From $50</span>
+          <img src="./assets/imags for hair and logos/Hair treatment Photos - Download Free High-Quality Pictures _ Freepik.jpeg" alt="Hair Treatment Services">
+        </div>
+        <div class="service-description-container">
+          <h3 class="service-title-designation text-2xl font-bold text-[#FF69B4] mb-3">
+            Hair Treatment
+          </h3>
+          <p class="text-gray-600 leading-relaxed mb-4">
+            Revitalize and restore your hair with our deep conditioning treatments. From keratin smoothing to protein treatments and moisture therapy, we use professional-grade products to repair damage, add shine, and improve hair texture for healthier, more manageable hair.
+          </p>
+          <ul class="service-feature-enumeration">
+            <li>Deep Conditioning Therapy</li>
+            <li>Keratin Treatments</li>
+            <li>Scalp Care & Massage</li>
+          </ul>
+          <div class="mt-6">
+            <a href="http://wa.me/2348134260378?text=I'm interested in Hair Treatment services" 
+               class="service-engagement-trigger">
+              <span class="relative z-10">Book Service</span>
+              <svg class="relative z-10 w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"></path>
+              </svg>
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Service 9: Hair Wash -->
+      <div class="service-presentation-module">
+        <div class="service-visual-container">
+          <span class="service-category-identifier">Wash & Care</span>
+          <span class="pricing-indicator-badge">From $25</span>
+          <img src="./assets/imags for hair and logos/hairflunt.jpeg" alt="Hair Washing Services">
+        </div>
+        <div class="service-description-container">
+          <h3 class="service-title-designation text-2xl font-bold text-[#FF69B4] mb-3">
+            Hair Wash & Blow Dry
+          </h3>
+          <p class="text-gray-600 leading-relaxed mb-4">
+            Refresh and rejuvenate with our professional hair washing service. Using premium shampoos and conditioners suited to your hair type, we cleanse, condition, and style your hair with a luxurious blow dry, leaving you feeling fresh and fabulous.
+          </p>
+          <ul class="service-feature-enumeration">
+            <li>Deep Cleansing Wash</li>
+            <li>Scalp Massage Included</li>
+            <li>Professional Blow Dry</li>
+          </ul>
+          <div class="mt-6">
+            <a href="http://wa.me/2348134260378?text=I'm interested in Hair Wash services" 
+               class="service-engagement-trigger">
+              <span class="relative z-10">Book Service</span>
+              <svg class="relative z-10 w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"></path>
+              </svg>
+            </a>
+          </div>
+        </div>
+      </div>
+
+    </div>
+
+    <!-- CTA Section -->
+    <div class="mt-20 text-center bg-gradient-to-r from-[#800080] to-[#a020f0] rounded-3xl p-12 shadow-2xl">
+      <h2 class="typography-serif-elegant text-3xl md:text-4xl font-bold text-white mb-4">
+        Ready to Transform Your Look?
+      </h2>
+      <p class="text-white/90 text-lg mb-8 max-w-2xl mx-auto">
+        Book your appointment today and experience the luxury of professional beauty services
       </p>
-    </div>
-  </div>
-
-  <div class="w-full px-4 sm:px-8 md:px-32 flex justify-center mt-8" id="contact">
-    <a href="./index.html#question" class="bg-[#FF69B4] px-6 py-3 rounded-lg text-white font-semibold hover:bg-[#800080] transition">
-      Ask Question
-    </a>
-  </div>
-</div>
-
-
-<footer class="w-full bg-black text-white px-6 py-12 mt-12">
-  <div class="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-4 gap-12">
-    
-    <!-- Logo & About -->
-    <div class="space-y-4 text-center md:text-left">
-      <img src="./assets/imags for hair and logos/Premium_Vector___Scissors_and_comb_stylist_silhouette_Design_for_a_beauty_salon-removebg-preview.png" 
-           alt="Salon Logo"
-           class="w-[100px] h-[100px] mx-auto md:mx-0 bg-[#800080] rounded">
-      <p class="text-sm leading-relaxed">
-        Welcome to our salon, where beauty meets professionalism.  
-        We specialize in <span class="text-[#FF69B4] font-semibold">makeup, nails, and hair</span> — ensuring you always leave glowing with confidence.
-      </p>
-    </div>
-
-    <!-- Quick Links -->
-    <div>
-      <h3 class="text-2xl font-bold text-[#FF69B4] mb-4 text-center md:text-left">Quick Links</h3>
-      <ul class="space-y-2 text-center md:text-left">
-        <li><a href="./index.html" class="hover:text-[#FFD1DC] transition">Home</a></li>
-        <li><a href="./about.html" class="hover:text-[#FFD1DC] transition">About Us</a></li>
-        <li><a href="./service.html#faq" class="hover:text-[#FFD1DC] transition">FAQ</a></li>
-        <li><a href="./contact.html" class="hover:text-[#FFD1DC] transition">Contact</a></li>
-        <li><a href="./contact.html#location" class="hover:text-[#FFD1DC] transition">Location</a></li>
-        <li><a href="./service.html" class="hover:text-[#FFD1DC] transition">Services</a></li>
-        <li><a href="./gallery.html" class="hover:text-[#FFD1DC] transition">Gallery</a></li>
-        <li><a href="./about.html#team" class="hover:text-[#FFD1DC] transition">Our Team</a></li>
-        <li><a href="./index.html#pricing" class="hover:text-[#FFD1DC] transition">Pricing</a></li>
-      </ul>
-    </div>
-
-    <!-- Social Media -->
-    <div>
-      <h3 class="text-2xl font-bold text-[#FF69B4] mb-4 text-center md:text-left">Follow Us</h3>
-      <div class="flex justify-center md:justify-start gap-5">
-        <a href="http://wa.me/2348134260378" class="hover:scale-110 transition">
-          <img src="./assets/imags for hair and logos/whatsapp.png" class="w-[40px] h-[40px]" alt="WhatsApp">
+      <div class="flex flex-col sm:flex-row gap-4 justify-center">
+        <a href="http://wa.me/2348134260378" 
+           class="inline-flex items-center gap-3 bg-white text-[#800080] font-bold py-4 px-10 rounded-full hover:scale-105 transition-transform shadow-xl">
+          <span>Book Now via WhatsApp</span>
+          <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
+            <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/>
+          </svg>
         </a>
-        <a href="https://www.facebook.com/share/19fTZcdPKN/?mibextid=wwXIfr" class="hover:scale-110 transition">
-          <img src="./assets/imags for hair and logos/facebook.png" class="w-[40px] h-[40px]" alt="Facebook">
-        </a>
-        <a href="https://www.instagram.com/milimoon12/" class="hover:scale-110 transition">
-          <img src="./assets/imags for hair and logos/instagram.png" class="w-[40px] h-[40px]" alt="Instagram">
+        <a href="tel:+2348134260378" 
+           class="inline-flex items-center gap-3 bg-[#FF69B4] text-white font-bold py-4 px-10 rounded-full hover:scale-105 transition-transform shadow-xl">
+          <span>Call Us Now</span>
+          <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"></path>
+          </svg>
         </a>
       </div>
     </div>
 
-    <!-- Contact Info -->
-    <div>
-      <h3 class="text-2xl font-bold text-[#FF69B4] mb-4 text-center md:text-left">Contact</h3>
-      <ul class="space-y-3 text-center md:text-left">
-        <li>
-          <a href="mailto:christopherolawale31@gmail.com" class="flex justify-center md:justify-start items-center gap-2 hover:text-[#FFD1DC]">
-            📧 <span>yourbusiness@gmail.com</span>
-          </a>
-        </li>
-        <li>
-          <a href="tel:+2348012345678" class="flex justify-center md:justify-start items-center gap-2 hover:text-[#FFD1DC]">
-            📞 <span>+234 801 234 5678</span>
-          </a>
-        </li>
-        <li>
-          <a href="https://maps.google.com/?q=Your+Business+Address" target="_blank" class="flex justify-center md:justify-start items-center gap-2 hover:text-[#FFD1DC]">
-            📍 <span>123 Beauty Street, Lagos</span>
-          </a>
-        </li>
-      </ul>
-    </div>
   </div>
+</main>
 
-  <!-- Copyright -->
-  <div class="border-t border-gray-700 mt-12 pt-6 text-center text-sm">
-    © 2025 Salon Website. All Rights Reserved.
+
+
+<section class="py-16 md:py-20 px-4 sm:px-6 lg:px-8" id="faq">
+  <div class="max-w-5xl mx-auto">
+    
+    <!-- Section Header -->
+    <div class="text-center mb-16">
+      <p class="text-[#FF69B4] text-sm font-semibold tracking-widest uppercase mb-3">Got Questions?</p>
+      <h1 class="typography-serif-elegant text-4xl md:text-5xl lg:text-6xl iridescent-typography-sequence font-bold mb-4">
+        Frequently Asked Questions
+      </h1>
+      <div class="divider-line"></div>
+      <p class="text-gray-600 mt-4 max-w-2xl mx-auto text-base md:text-lg">
+        Find answers to common questions about our services, booking process, and policies
+      </p>
+    </div>
+
+    <!-- FAQ Accordion -->
+    <div class="space-y-6" id="faqAccordionContainer">
+      
+      <!-- FAQ 1 -->
+      <div class="inquiry-response-module" data-faq="1">
+        <span class="sequential-identifier-badge">1</span>
+        <div class="question-trigger-interface">
+          <div class="flex items-center gap-4 flex-1">
+            <div class="question-status-indicator">
+              <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8.228 9c.549-1.165 2.03-2 3.772-2 2.21 0 4 1.343 4 3 0 1.4-1.278 2.575-3.006 2.907-.542.104-.994.54-.994 1.093m0 3h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+              </svg>
+            </div>
+            <h3 class="text-xl md:text-2xl font-bold text-[#800080] flex-1">
+              How do I book an appointment?
+            </h3>
+          </div>
+          <svg class="expansion-toggle-icon w-6 h-6 text-[#FF69B4] flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M19 9l-7 7-7-7"></path>
+          </svg>
+        </div>
+        <div class="response-content-container">
+          <p class="text-gray-600 text-base md:text-lg leading-relaxed">
+            To book an appointment, simply click on any "Book" button on our website. 
+            <span class="emphasis-highlight-text font-bold text-lg text-[#FF69B4]">You'll be directed to our WhatsApp,</span> 
+            where we can chat and finalize your booking instantly. It's quick, easy, and convenient!
+          </p>
+        </div>
+      </div>
+
+      <!-- FAQ 2 -->
+      <div class="inquiry-response-module" data-faq="2">
+        <span class="sequential-identifier-badge">2</span>
+        <div class="question-trigger-interface">
+          <div class="flex items-center gap-4 flex-1">
+            <div class="question-status-indicator">
+              <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M20 7l-8-4-8 4m16 0l-8 4m8-4v10l-8 4m0-10L4 7m8 4v10M4 7v10l8 4"></path>
+              </svg>
+            </div>
+            <h3 class="text-xl md:text-2xl font-bold text-[#800080] flex-1">
+              Can I bring my own products for hair or nails?
+            </h3>
+          </div>
+          <svg class="expansion-toggle-icon w-6 h-6 text-[#FF69B4] flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M19 9l-7 7-7-7"></path>
+          </svg>
+        </div>
+        <div class="response-content-container">
+          <p class="text-gray-600 text-base md:text-lg leading-relaxed">
+            Yes, you're welcome to bring your own products! We understand that some clients have specific preferences or sensitivities. 
+            However, we also use premium professional-grade products that are carefully selected for quality and safety. 
+            Please let us know in advance if you plan to bring your own products so we can prepare accordingly.
+          </p>
+        </div>
+      </div>
+
+      <!-- FAQ 3 -->
+      <div class="inquiry-response-module" data-faq="3">
+        <span class="sequential-identifier-badge">3</span>
+        <div class="question-trigger-interface">
+          <div class="flex items-center gap-4 flex-1">
+            <div class="question-status-indicator">
+              <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"></path>
+              </svg>
+            </div>
+            <h3 class="text-xl md:text-2xl font-bold text-[#800080] flex-1">
+              Do I need to book an appointment in advance?
+            </h3>
+          </div>
+          <svg class="expansion-toggle-icon w-6 h-6 text-[#FF69B4] flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M19 9l-7 7-7-7"></path>
+          </svg>
+        </div>
+        <div class="response-content-container">
+          <p class="text-gray-600 text-base md:text-lg leading-relaxed">
+            Yes, we recommend booking at least 
+            <span class="emphasis-highlight-text font-bold text-[#FF69B4]">24–48 hours ahead</span> 
+            to secure your preferred time slot. This ensures that our stylists can dedicate their full attention to you. 
+            Walk-ins are welcome when available, but appointments guarantee your spot and minimize wait times.
+          </p>
+        </div>
+      </div>
+
+      <!-- FAQ 4 -->
+      <div class="inquiry-response-module" data-faq="4">
+        <span class="sequential-identifier-badge">4</span>
+        <div class="question-trigger-interface">
+          <div class="flex items-center gap-4 flex-1">
+            <div class="question-status-indicator">
+              <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6"></path>
+              </svg>
+            </div>
+            <h3 class="text-xl md:text-2xl font-bold text-[#800080] flex-1">
+              Do you offer home services?
+            </h3>
+          </div>
+          <svg class="expansion-toggle-icon w-6 h-6 text-[#FF69B4] flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M19 9l-7 7-7-7"></path>
+          </svg>
+        </div>
+        <div class="response-content-container">
+          <p class="text-gray-600 text-base md:text-lg leading-relaxed">
+            Yes! We offer home services for special occasions such as bridal makeup, party preparations, and group bookings. 
+            Our mobile service brings salon-quality beauty treatments to your location. 
+            Additional fees may apply based on distance and service requirements. 
+            <span class="emphasis-highlight-text font-semibold text-[#FF69B4]">Contact us via WhatsApp</span> 
+            to discuss your needs and get a personalized quote.
+          </p>
+        </div>
+      </div>
+
+      <!-- FAQ 5 - Bonus -->
+      <div class="inquiry-response-module" data-faq="5">
+        <span class="sequential-identifier-badge">5</span>
+        <div class="question-trigger-interface">
+          <div class="flex items-center gap-4 flex-1">
+            <div class="question-status-indicator">
+              <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+              </svg>
+            </div>
+            <h3 class="text-xl md:text-2xl font-bold text-[#800080] flex-1">
+              What payment methods do you accept?
+            </h3>
+          </div>
+          <svg class="expansion-toggle-icon w-6 h-6 text-[#FF69B4] flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M19 9l-7 7-7-7"></path>
+          </svg>
+        </div>
+        <div class="response-content-container">
+          <p class="text-gray-600 text-base md:text-lg leading-relaxed">
+            We accept multiple payment methods for your convenience: cash, bank transfers, and mobile money transfers. 
+            Payment is required at the time of service or as agreed during booking. 
+            For home services and special packages, we may request a deposit to secure your appointment. 
+            All payment details will be discussed when you book via WhatsApp.
+          </p>
+        </div>
+      </div>
+
+      <!-- FAQ 6 - Bonus -->
+      <div class="inquiry-response-module" data-faq="6">
+        <span class="sequential-identifier-badge">6</span>
+        <div class="question-trigger-interface">
+          <div class="flex items-center gap-4 flex-1">
+            <div class="question-status-indicator">
+              <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+              </svg>
+            </div>
+            <h3 class="text-xl md:text-2xl font-bold text-[#800080] flex-1">
+              What is your cancellation policy?
+            </h3>
+          </div>
+          <svg class="expansion-toggle-icon w-6 h-6 text-[#FF69B4] flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M19 9l-7 7-7-7"></path>
+          </svg>
+        </div>
+        <div class="response-content-container">
+          <p class="text-gray-600 text-base md:text-lg leading-relaxed">
+            We understand that plans change! You can cancel or reschedule your appointment 
+            <span class="emphasis-highlight-text font-bold text-[#FF69B4]">at least 12 hours in advance</span> 
+            without any charges. Late cancellations or no-shows may be subject to a fee, especially for home services. 
+            Please notify us as soon as possible via WhatsApp if you need to make changes to your booking.
+          </p>
+        </div>
+      </div>
+
+    </div>
+
+    <!-- CTA Section -->
+    <div class="mt-16 text-center">
+      <div class="bg-gradient-to-r from-[#800080] to-[#a020f0] rounded-3xl p-8 md:p-12 shadow-2xl">
+        <h3 class="typography-serif-elegant text-2xl md:text-3xl font-bold text-white mb-4">
+          Still Have Questions?
+        </h3>
+        <p class="text-white/90 text-base md:text-lg mb-8 max-w-2xl mx-auto">
+          Don't hesitate to reach out! Our team is ready to answer any questions and help you book your perfect beauty experience.
+        </p>
+        <a href="http://wa.me/2348134260378?text=Hi! I have a question about your services" 
+           class="inquiry-submission-trigger">
+          <span class="relative z-10">Ask Your Question</span>
+          <svg class="relative z-10 w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 12h.01M12 12h.01M16 12h.01M21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 01-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 13.574 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z"></path>
+          </svg>
+        </a>
+      </div>
+    </div>
+
   </div>
-</footer>
-<script src="./script.js"></script>
+</section>
+
+
+
+<footer class="beauty-footer-wrapper relative">
+    
+    <!-- Background Pattern -->
+    <div class="beauty-footer-bg-pattern"></div>
+    
+    <!-- Decorative Ornaments -->
+    <div class="beauty-footer-ornament beauty-footer-ornament-1"></div>
+    <div class="beauty-footer-ornament beauty-footer-ornament-2"></div>
+
+    <div class="relative z-10 px-6 py-12 md:py-16">
+      
+      <!-- Newsletter Section -->
+      <div class="max-w-4xl mx-auto beauty-footer-newsletter">
+        <div class="text-center mb-6">
+          <h3 class="text-2xl md:text-3xl font-bold beauty-footer-title-gradient mb-2">
+            Stay Updated
+          </h3>
+          <p class="text-gray-300 text-sm md:text-base">
+            Subscribe to get exclusive beauty tips and special offers
+          </p>
+        </div>
+        <form class="flex flex-col sm:flex-row gap-3 max-w-xl mx-auto">
+          <input 
+            type="email" 
+            placeholder="Enter your email address" 
+            class="beauty-footer-newsletter-input flex-1"
+            required>
+          <button type="submit" class="beauty-footer-newsletter-btn">
+            Subscribe ✨
+          </button>
+        </form>
+      </div>
+
+      <!-- Main Footer Content -->
+      <div class="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12">
+        
+        <!-- Logo & About Section -->
+        <div class="beauty-footer-section text-center md:text-left">
+          <div class="beauty-footer-logo-frame mb-6 mx-auto md:mx-0">
+            <img src="./assets/imags for hair and logos/Premium_Vector___Scissors_and_comb_stylist_silhouette_Design_for_a_beauty_salon-removebg-preview.png" 
+                 alt="Beauty Studio Logo"
+                 class="w-[100px] h-[100px]">
+          </div>
+          <h3 class="text-xl font-bold text-white mb-3">Beauty Studio</h3>
+          <p class="text-gray-300 text-sm leading-relaxed">
+            Welcome to our salon, where beauty meets professionalism. 
+            We specialize in <span class="text-pink-400 font-semibold">makeup, nails, and hair</span> — 
+            ensuring you always leave glowing with confidence.
+          </p>
+        </div>
+
+        <!-- Quick Links Section -->
+        <div class="beauty-footer-section">
+          <h3 class="text-2xl font-bold beauty-footer-title-gradient mb-6 text-center md:text-left">
+            Quick Links
+          </h3>
+          <ul class="space-y-3 text-gray-300 text-sm">
+            <li><a href="./homepage.html" class="beauty-footer-link-item block">Home</a></li>
+            <li><a href="./about.html" class="beauty-footer-link-item block">About Us</a></li>
+            <li><a href="./service.html" class="beauty-footer-link-item block">Services</a></li>
+            <li><a href="./gallery.html" class="beauty-footer-link-item block">Gallery</a></li>
+            <li><a href="./service.html#faq" class="beauty-footer-link-item block">FAQ</a></li>
+            <li><a href="./about.html#team" class="beauty-footer-link-item block">Our Team</a></li>
+            <li><a href="./homepage.html" class="beauty-footer-link-item block">Pricing</a></li>
+            <li><a href="./contact.html" class="beauty-footer-link-item block">Contact</a></li>
+            <li><a href="./contact.html#location" class="beauty-footer-link-item block">Location</a></li>
+          </ul>
+        </div>
+
+        <!-- Social Media Section -->
+        <div class="beauty-footer-section">
+          <h3 class="text-2xl font-bold beauty-footer-title-gradient mb-6 text-center md:text-left">
+            Follow Us
+          </h3>
+          <p class="text-gray-300 text-sm mb-6 text-center md:text-left">
+            Join our community and stay connected
+          </p>
+          <div class="flex justify-center md:justify-start gap-4">
+            <a href="http://wa.me/2348134260378" 
+               class="beauty-footer-social-icon"
+               aria-label="WhatsApp">
+              <img src="./assets/imags for hair and logos/whatsapp.png" 
+                   class="w-[28px] h-[28px]" 
+                   alt="WhatsApp">
+            </a>
+            <a href="https://www.facebook.com/share/19fTZcdPKN/?mibextid=wwXIfr" 
+               class="beauty-footer-social-icon"
+               aria-label="Facebook">
+              <img src="./assets/imags for hair and logos/facebook.png" 
+                   class="w-[28px] h-[28px]" 
+                   alt="Facebook">
+            </a>
+            <a href="https://www.instagram.com/milimoon12/" 
+               class="beauty-footer-social-icon"
+               aria-label="Instagram">
+              <img src="./assets/imags for hair and logos/instagram.png" 
+                   class="w-[28px] h-[28px]" 
+                   alt="Instagram">
+            </a>
+          </div>
+        </div>
+
+        <!-- Contact Info Section -->
+        <div class="beauty-footer-section">
+          <h3 class="text-2xl font-bold beauty-footer-title-gradient mb-6 text-center md:text-left">
+            Get In Touch
+          </h3>
+          <ul class="space-y-3">
+            <li>
+              <a href="mailto:yourbusiness@gmail.com" class="beauty-footer-contact-item">
+                <span class="beauty-footer-contact-icon">📧</span>
+                <span class="text-gray-300 text-sm">yourbusiness@gmail.com</span>
+              </a>
+            </li>
+            <li>
+              <a href="tel:+2348012345678" class="beauty-footer-contact-item">
+                <span class="beauty-footer-contact-icon">📞</span>
+                <span class="text-gray-300 text-sm">+234 801 234 5678</span>
+              </a>
+            </li>
+            <li>
+              <a href="https://maps.google.com/?q=123+Beauty+Street+Lagos" 
+                 target="_blank" 
+                 class="beauty-footer-contact-item">
+                <span class="beauty-footer-contact-icon">📍</span>
+                <span class="text-gray-300 text-sm">Ibadan Nigeria</span>
+              </a>
+            </li>
+          </ul>
+        </div>
+
+      </div>
+
+      <!-- Decorative Divider -->
+      <div class="beauty-footer-divider max-w-7xl mx-auto"></div>
+
+      <!-- Copyright Section -->
+      <div class="beauty-footer-copyright">
+        <div class="max-w-7xl mx-auto text-center">
+          <p class="text-gray-300 text-sm mb-2">
+            © 2025 <span class="text-pink-400 font-semibold">Beauty Studio</span>. All Rights Reserved.
+          </p>
+          <p class="text-gray-400 text-xs">
+            Crafted with <span class="beauty-footer-heart">♥</span> for Beautiful People
+          </p>
+          <div class="flex flex-wrap justify-center gap-4 mt-4 text-xs text-gray-400">
+            <a href="#" class="hover:text-pink-400 transition">Privacy Policy</a>
+            <span>•</span>
+            <a href="#" class="hover:text-pink-400 transition">Terms of Service</a>
+            <span>•</span>
+            <a href="#" class="hover:text-pink-400 transition">Cookie Policy</a>
+          </div>
+        </div>
+      </div>
+
+    </div>
+
+    <!-- Back to Top Button -->
+    <button class="beauty-footer-back-to-top" id="beautyBackToTop" aria-label="Back to top">
+      <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M5 10l7-7m0 0l7 7m-7-7v18"></path>
+      </svg>
+    </button>
+
+  </footer>
+<script src="./service.js"></script>
 </body>
 </html>

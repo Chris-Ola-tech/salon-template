@@ -5,374 +5,640 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Gallerey</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
   <link rel="icon" type="image/png" href="./assets/images for nails/hair.png">
    <script src="https://cdn.tailwindcss.com"></script>
-  <script>
-    tailwind.config = {
-      theme: {
-        extend: {
-          fontFamily: {
-            poppins: ['Poppins', 'sans-serif'],
-          }
-        }
-      }
-    }
-  </script>
-
-  <style>
-    body {
-      font-family: 'Poppins', sans-serif;
-    }
-  </style>
-  <!-- Hot Pink – #FF69B4 (attention grabber)
-
-Light Pink – #FFD1DC (soft sections)
-
-Deep Purple – #800080 (royal luxury touch)
-
-White – #FFFFFF (clean background)
-
-Gold Accent – #F4C430 (premium feel) -->
+  <link rel="stylesheet" href="./gallery.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 </head>
 <body>
-    <header id="navbar" class="fixed top-0 left-0 w-full h-[90px] z-50 transition-colors duration-300 bg-transparent">
-  <div class="flex items-center justify-between px-6 h-full">
+ <header id="primaryNavigationInterface" class="navigational-interface-container fixed top-0 left-0 w-full h-[90px] z-50 bg-transparent">
+  <div class="flex items-center justify-between px-4 sm:px-6 lg:px-12 h-full max-w-7xl mx-auto">
 
     <!-- Logo -->
-    <div>
-      <img class="w-[100px] h-[100px]" 
-           src="./assets/imags for hair and logos/Premium_Vector___Scissors_and_comb_stylist_silhouette_Design_for_a_beauty_salon-removebg-preview.png">
+    <div class="flex items-center">
+      <a href="./homepage.html">
+        <img class="brand-identity-emblem w-[80px] h-[80px] md:w-[100px] md:h-[100px]" 
+             src="./assets/imags for hair and logos/Premium_Vector___Scissors_and_comb_stylist_silhouette_Design_for_a_beauty_salon-removebg-preview.png"
+             alt="Beauty Salon Logo">
+      </a>
     </div>
 
-    <!-- Desktop Menu -->
-    <div class="hidden md:block">
-      <ul class="flex gap-10">
-        <li class="font-bold text-xl text-white hover:text-[#FFD1DC] hover:underline"><a href="./index.html">Home</a></li>
-        <li class="font-bold text-xl text-white hover:text-[#FFD1DC] hover:underline"><a href="./about.html">About</a></li>
-        <li class="font-bold text-xl text-white hover:text-[#FFD1DC] hover:underline"><a href="./service.html">Service</a></li>
-        <li class="font-bold text-xl text-white hover:text-[#FFD1DC] hover:underline"><a href="./gallery.html">Gallery</a></li>
-        <li class="font-bold text-xl text-white hover:text-[#FFD1DC] hover:underline"><a href="./contact.html">Contact</a></li>
+    <!-- Desktop Navigation Menu -->
+    <nav class="hidden lg:block">
+      <ul class="flex gap-8 xl:gap-10">
+        <li>
+          <a href="./homepage.html" class="navigation-hyperlink-element font-bold text-lg xl:text-xl text-white">
+            Home
+          </a>
+        </li>
+        <li>
+          <a href="./about.html" class="navigation-hyperlink-element font-bold text-lg xl:text-xl text-white">
+            About
+          </a>
+        </li>
+        <li>
+          <a href="./service.html" class="navigation-hyperlink-element font-bold text-lg xl:text-xl text-white">
+            Services
+          </a>
+        </li>
+        <li>
+          <a href="./gallery.html" class="navigation-hyperlink-element font-bold text-lg xl:text-xl text-white">
+            Gallery
+          </a>
+        </li>
+        <li>
+          <a href="./contact.html" class="navigation-hyperlink-element font-bold text-lg xl:text-xl text-white">
+            Contact
+          </a>
+        </li>
       </ul>
+    </nav>
+
+    <!-- Book Now Button (Desktop) -->
+    <div class="hidden lg:block">
+      <a href="http://wa.me/2348134260378" 
+         class="inline-flex items-center gap-2 bg-gradient-to-r from-[#FF69B4] to-[#FF1493] text-white font-bold py-3 px-6 rounded-full hover:scale-105 transition-transform shadow-lg hover:shadow-xl">
+        <span>Book Now</span>
+        <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
+          <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/>
+        </svg>
+      </a>
     </div>
 
-    <!-- Mobile Hamburger -->
-    <div class="md:hidden">
-      <button id="menu-btn">
-        <img class="w-[40px] h-[40px]" src="./assets/imags for hair and logos/menus.png" alt="Menu">
+    <!-- Mobile Hamburger Menu -->
+    <div class="lg:hidden">
+      <button id="mobileMenuActivationTrigger" class="menu-toggle-trigger">
+        <svg class="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+        </svg>
       </button>
     </div>
   </div>
-
-  <!-- Mobile Overlay -->
-  <div id="overlay" class="hidden fixed inset-0 bg-black/50 z-40"></div>
-
-  <!-- Mobile Slide-In Menu -->
-  <div id="mobile-menu" class="fixed top-0 right-[-100%] h-full w-64 bg-[#800080] flex flex-col items-center justify-center space-y-8 transition-right duration-300 z-50">
-    <a href="./index.html" class="font-bold text-xl text-white hover:text-[#FFD1DC] hover:underline">Home</a>
-    <a href="./about.html" class="font-bold text-xl text-white hover:text-[#FFD1DC] hover:underline">About</a>
-    <a href="./service.html" class="font-bold text-xl text-white hover:text-[#FFD1DC] hover:underline">Service</a>
-    <a href="./gallery.html" class="font-bold text-xl text-white hover:text-[#FFD1DC] hover:underline">Gallery</a>
-    <a href="./contact.html" class="font-bold text-xl text-white hover:text-[#FFD1DC] hover:underline">Contact</a>
-  </div>
 </header>
 
+<!-- Mobile Overlay -->
+<div id="overlayDimmingLayer" class="overlay-dimming-layer fixed inset-0 bg-black/70 z-40"></div>
 
-<main class="px-6 mt-12">
-  <h1 class="text-center text-3xl md:text-4xl text-[#FF69B4] font-bold mb-16">
-    Our Gallery
-  </h1>
+<!-- Mobile Slide-In Menu -->
+<aside id="mobileNavigationPanel" class="mobile-navigation-panel fixed top-0 right-[-100%] h-full w-80 bg-gradient-to-b from-[#800080] to-[#a020f0] z-50">
+  
+  <!-- Close Button -->
+  <div id="menuDismissalControl" class="menu-dismissal-trigger">
+    <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
+    </svg>
+  </div>
 
-  <!-- ================= Makeups ================= -->
-  <div>
-    <h1 class="text-center text-3xl md:text-4xl text-[#FFD1DC] font-bold mb-16">
-      Makeups
+  <!-- Mobile Menu Content -->
+  <div class="flex flex-col items-center justify-center h-full space-y-8 px-6">
+    <a href="./homepage.html" class="mobile-nav-link font-bold text-2xl text-white hover:text-[#FFD1DC] transition-colors">
+      Home
+    </a>
+    <a href="./about.html" class="mobile-nav-link font-bold text-2xl text-white hover:text-[#FFD1DC] transition-colors">
+      About
+    </a>
+    <a href="./service.html" class="mobile-nav-link font-bold text-2xl text-white hover:text-[#FFD1DC] transition-colors">
+      Services
+    </a>
+    <a href="./gallery.html" class="mobile-nav-link font-bold text-2xl text-white hover:text-[#FFD1DC] transition-colors">
+      Gallery
+    </a>
+    <a href="./contact.html" class="mobile-nav-link font-bold text-2xl text-white hover:text-[#FFD1DC] transition-colors">
+      Contact
+    </a>
+    
+    <!-- Mobile Book Now Button -->
+    <a href="http://wa.me/2348134260378" 
+       class="mobile-nav-link mt-8 inline-flex items-center gap-2 bg-white text-[#800080] font-bold py-3 px-8 rounded-full hover:scale-105 transition-transform shadow-xl">
+      <span>Book Now</span>
+      <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
+        <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/>
+      </svg>
+    </a>
+  </div>
+</aside>
+
+<!-- Gallery Hero Section -->
+<section class="hero-visual-showcase relative flex items-center justify-center pt-[90px]">
+  
+  <!-- Animated Background Particles -->
+  <div class="decorative-particle-element" style="top: 10%; left: 15%; animation-delay: 0s;"></div>
+  <div class="decorative-particle-element" style="top: 60%; left: 80%; animation-delay: 2s;"></div>
+  <div class="decorative-particle-element" style="top: 30%; left: 70%; animation-delay: 4s;"></div>
+  <div class="decorative-particle-element" style="top: 80%; left: 20%; animation-delay: 6s;"></div>
+  <div class="decorative-particle-element" style="top: 50%; left: 50%; animation-delay: 8s;"></div>
+  
+  <!-- Hero Content -->
+  <div class="hero-content-container relative z-10 text-center px-4 sm:px-6 lg:px-8 py-20 max-w-5xl mx-auto">
+    
+    <!-- Breadcrumb -->
+    <nav class="navigational-breadcrumb-trail justify-center text-white/80 mb-8">
+      <a href="./homepage.html" class="hover:text-white transition">Home</a>
+      <span class="breadcrumb-separator">/</span>
+      <span class="text-white font-semibold">Gallery</span>
+    </nav>
+    
+    <!-- Main Heading -->
+    <h1 class="typography-serif-elegant text-5xl sm:text-6xl md:text-7xl lg:text-8xl font-bold iridescent-text-display mb-6 leading-tight">
+      Our Gallery
     </h1>
-
-    <!-- Responsive Grid -->
-    <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
-      <!-- Image Card -->
-      <div class="relative group overflow-hidden rounded">
-        <img src="./assets/images for makeup/download (10).jpeg"
-          class="w-full h-[300px] sm:h-[350px] md:h-[400px] object-cover rounded transition-transform duration-300 group-hover:scale-105">
-        <!-- Overlay -->
-        <div
-          class="absolute inset-0 bg-black bg-opacity-50 flex items-center justify-center 
-                     opacity-0 group-hover:opacity-100 transition">
-          <p class="text-white text-lg font-semibold">Glam Makeup</p>
-        </div>
+    
+    <!-- Subtitle -->
+    <p class="text-white text-lg sm:text-xl md:text-2xl mb-8 leading-relaxed max-w-3xl mx-auto font-light">
+      Explore our stunning portfolio of transformations, showcasing the artistry and passion behind every style
+    </p>
+    
+    <!-- CTA Buttons -->
+    <div class="flex flex-col sm:flex-row gap-4 justify-center items-center mb-12">
+      <a href="#gallery-content" 
+         class="inline-flex items-center gap-3 bg-white text-[#800080] font-bold py-4 px-8 rounded-full hover:scale-105 transition-transform shadow-xl hover:shadow-2xl">
+        <span>Explore Gallery</span>
+        <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+        </svg>
+      </a>
+      
+      <a href="http://wa.me/2348134260378" 
+         class="inline-flex items-center gap-3 bg-gradient-to-r from-[#FF69B4] to-[#FF1493] text-white font-bold py-4 px-8 rounded-full hover:scale-105 transition-transform shadow-xl hover:shadow-2xl">
+        <span>Book Appointment</span>
+        <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"></path>
+        </svg>
+      </a>
+    </div>
+    
+    <!-- Stats -->
+    <div class="grid grid-cols-2 md:grid-cols-4 gap-4 md:gap-6 mt-16">
+      <div class="statistical-indicator-module text-center">
+        <p class="text-4xl md:text-5xl font-bold text-white mb-2">500+</p>
+        <p class="text-white/80 text-sm md:text-base">Photos</p>
       </div>
-
-      <div class="relative group overflow-hidden rounded">
-        <img src="./assets/images for makeup/Classic Red Glam Makeup Look ❤️✨.jpeg"
-          class="w-full h-[300px] sm:h-[350px] md:h-[400px] object-cover rounded transition-transform duration-300 group-hover:scale-105">
-        <div
-          class="absolute inset-0 bg-black bg-opacity-50 flex items-center justify-center 
-                     opacity-0 group-hover:opacity-100 transition">
-          <p class="text-white text-lg font-semibold">Classic Red Lips</p>
-        </div>
+      <div class="statistical-indicator-module text-center">
+        <p class="text-4xl md:text-5xl font-bold text-white mb-2">1000+</p>
+        <p class="text-white/80 text-sm md:text-base">Happy Clients</p>
       </div>
-
-      <div class="relative group overflow-hidden rounded">
-        <img src="./assets/images for makeup/''Discover Fashion & Art Updates on Luna Johnson's Profile!_.jpeg"
-          class="w-full h-[300px] sm:h-[350px] md:h-[400px] object-cover rounded transition-transform duration-300 group-hover:scale-105">
-        <div
-          class="absolute inset-0 bg-black bg-opacity-50 flex items-center justify-center 
-                     opacity-0 group-hover:opacity-100 transition">
-          <p class="text-white text-lg font-semibold">Bridal Look</p>
-        </div>
+      <div class="statistical-indicator-module text-center">
+        <p class="text-4xl md:text-5xl font-bold text-white mb-2">15+</p>
+        <p class="text-white/80 text-sm md:text-base">Years Experience</p>
       </div>
-
-      <div class="relative group overflow-hidden rounded">
-        <img src="./assets/images for makeup/download (9).jpeg"
-          class="w-full h-[300px] sm:h-[350px] md:h-[400px] object-cover rounded transition-transform duration-300 group-hover:scale-105">
-        <div
-          class="absolute inset-0 bg-black bg-opacity-50 flex items-center justify-center 
-                     opacity-0 group-hover:opacity-100 transition">
-          <p class="text-white text-lg font-semibold">Natural Radiance</p>
-        </div>
-      </div>
-
-      <div class="relative group overflow-hidden rounded">
-        <img src="./assets/images for makeup/download (8).jpeg"
-          class="w-full h-[300px] sm:h-[350px] md:h-[400px] object-cover rounded transition-transform duration-300 group-hover:scale-105">
-        <div
-          class="absolute inset-0 bg-black bg-opacity-50 flex items-center justify-center 
-                     opacity-0 group-hover:opacity-100 transition">
-          <p class="text-white text-lg font-semibold">Smokey Eyes</p>
-        </div>
-      </div>
-
-      <div class="relative group overflow-hidden rounded">
-        <img src="./assets/images for makeup/Flawless Eyeshadow Application with Makeup Brush.jpeg"
-          class="w-full h-[300px] sm:h-[350px] md:h-[400px] object-cover rounded transition-transform duration-300 group-hover:scale-105">
-        <div
-          class="absolute inset-0 bg-black bg-opacity-50 flex items-center justify-center 
-                     opacity-0 group-hover:opacity-100 transition">
-          <p class="text-white text-lg font-semibold">Evening Glow</p>
-        </div>
+      <div class="statistical-indicator-module text-center">
+        <p class="text-4xl md:text-5xl font-bold text-white mb-2">50+</p>
+        <p class="text-white/80 text-sm md:text-base">Services</p>
       </div>
     </div>
-
-    <!-- ================= Nails ================= -->
-    <div class="mt-8">
-      <h1 class="text-center text-3xl md:text-4xl text-[#FFD1DC] font-bold mb-8">
-        Nails
-      </h1>
-
-      <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
-        <div class="relative group overflow-hidden rounded">
-          <img src="./assets/images for nails/🖤 Anti-Valentine's Day Nails Ideas.jpeg"
-            class="w-full h-[300px] sm:h-[350px] md:h-[400px] object-cover rounded transition-transform duration-300 group-hover:scale-105">
-          <div
-            class="absolute inset-0 bg-black bg-opacity-50 flex items-center justify-center 
-                       opacity-0 group-hover:opacity-100 transition">
-            <p class="text-white text-lg font-semibold">French Tips</p>
-          </div>
-        </div>
-
-        <div class="relative group overflow-hidden rounded">
-          <img src="./assets/images for nails/download.jpeg"
-            class="w-full h-[300px] sm:h-[350px] md:h-[400px] object-cover rounded transition-transform duration-300 group-hover:scale-105">
-          <div
-            class="absolute inset-0 bg-black bg-opacity-50 flex items-center justify-center 
-                       opacity-0 group-hover:opacity-100 transition">
-            <p class="text-white text-lg font-semibold">Ombre Nails</p>
-          </div>
-        </div>
-
-        <div class="relative group overflow-hidden rounded">
-          <img src="./assets/images for nails/download (6).jpeg"
-            class="w-full h-[300px] sm:h-[350px] md:h-[400px] object-cover rounded transition-transform duration-300 group-hover:scale-105">
-          <div
-            class="absolute inset-0 bg-black bg-opacity-50 flex items-center justify-center 
-                       opacity-0 group-hover:opacity-100 transition">
-            <p class="text-white text-lg font-semibold">Glitter Glam</p>
-          </div>
-        </div>
-
-        <div class="relative group overflow-hidden rounded">
-          <img src="./assets/images for nails/Glossy Red Stiletto Nails with Hand-Painted Floral Art.jpeg"
-            class="w-full h-[300px] sm:h-[350px] md:h-[400px] object-cover rounded transition-transform duration-300 group-hover:scale-105">
-          <div
-            class="absolute inset-0 bg-black bg-opacity-50 flex items-center justify-center 
-                       opacity-0 group-hover:opacity-100 transition">
-            <p class="text-white text-lg font-semibold">Matte Finish</p>
-          </div>
-        </div>
-
-        <div class="relative group overflow-hidden rounded">
-          <img src="./assets/images for nails/download (2).jpeg"
-            class="w-full h-[300px] sm:h-[350px] md:h-[400px] object-cover rounded transition-transform duration-300 group-hover:scale-105">
-          <div
-            class="absolute inset-0 bg-black bg-opacity-50 flex items-center justify-center 
-                       opacity-0 group-hover:opacity-100 transition">
-            <p class="text-white text-lg font-semibold">Floral Art</p>
-          </div>
-        </div>
-
-        <div class="relative group overflow-hidden rounded">
-          <img src="./assets/images for nails/download (3).jpeg"
-            class="w-full h-[300px] sm:h-[350px] md:h-[400px] object-cover rounded transition-transform duration-300 group-hover:scale-105">
-          <div
-            class="absolute inset-0 bg-black bg-opacity-50 flex items-center justify-center 
-                       opacity-0 group-hover:opacity-100 transition">
-            <p class="text-white text-lg font-semibold">Luxury Chrome</p>
-          </div>
-        </div>
-      </div>
-    </div>
-
-    <!-- ================= Hair ================= -->
-    <div class="mt-8">
-      <h1 class="text-center text-3xl md:text-4xl text-[#FFD1DC] font-bold mb-8">
-        Hair
-      </h1>
-
-      <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
-        <div class="relative group overflow-hidden rounded">
-          <img src="./assets/imags for hair and logos/cute-red.jpeg"
-            class="w-full h-[300px] sm:h-[350px] md:h-[400px] object-cover rounded transition-transform duration-300 group-hover:scale-105">
-          <div
-            class="absolute inset-0 bg-black bg-opacity-50 flex items-center justify-center 
-                       opacity-0 group-hover:opacity-100 transition">
-            <p class="text-white text-lg font-semibold">Bohemian Braids</p>
-          </div>
-        </div>
-
-        <div class="relative group overflow-hidden rounded">
-          <img src="./assets/imags for hair and logos/download (8).jpeg"
-            class="w-full h-[300px] sm:h-[350px] md:h-[400px] object-cover rounded transition-transform duration-300 group-hover:scale-105">
-          <div
-            class="absolute inset-0 bg-black bg-opacity-50 flex items-center justify-center 
-                       opacity-0 group-hover:opacity-100 transition">
-            <p class="text-white text-lg font-semibold">Box Braids with Colored Extensions</p>
-          </div>
-        </div>
-
-        <div class="relative group overflow-hidden rounded">
-          <img src="./assets/imags for hair and logos/download (13).jpeg"
-            class="w-full h-[300px] sm:h-[350px] md:h-[400px] object-cover rounded transition-transform duration-300 group-hover:scale-105">
-          <div
-            class="absolute inset-0 bg-black bg-opacity-50 flex items-center justify-center 
-                       opacity-0 group-hover:opacity-100 transition">
-            <p class="text-white text-lg font-semibold">Body Wave Wig</p>
-          </div>
-        </div>
-
-        <div class="relative group overflow-hidden rounded">
-          <img src="./assets/imags for hair and logos/download (5).jpeg"
-            class="w-full h-[300px] sm:h-[350px] md:h-[400px] object-cover rounded transition-transform duration-300 group-hover:scale-105">
-          <div
-            class="absolute inset-0 bg-black bg-opacity-50 flex items-center justify-center 
-                       opacity-0 group-hover:opacity-100 transition">
-            <p class="text-white text-lg font-semibold">Tapered Cut with Side Design</p>
-          </div>
-        </div>
-
-        <div class="relative group overflow-hidden rounded">
-          <img src="./assets/imags for hair and logos/download (18).jpeg"
-            class="w-full h-[300px] sm:h-[350px] md:h-[400px] object-cover rounded transition-transform duration-300 group-hover:scale-105">
-          <div
-            class="absolute inset-0 bg-black bg-opacity-50 flex items-center justify-center 
-                       opacity-0 group-hover:opacity-100 transition">
-            <p class="text-white text-lg font-semibold">Long Curly Wig (Wet Look Curls)</p>
-          </div>
-        </div>
-
-        <div class="relative group overflow-hidden rounded">
-          <img src="./assets/imags for hair and logos/download (20).jpeg"
-            class="w-full h-[300px] sm:h-[350px] md:h-[400px] object-cover rounded transition-transform duration-300 group-hover:scale-105">
-          <div
-            class="absolute inset-0 bg-black bg-opacity-50 flex items-center justify-center 
-                       opacity-0 group-hover:opacity-100 transition">
-            <p class="text-white text-lg font-semibold">Cornrows with Beads/Cowries</p>
-          </div>
-        </div>
-      </div>
+    
+    <!-- Scroll Indicator -->
+    <div class="scroll-indication-prompt absolute bottom-8 left-1/2 transform -translate-x-1/2">
+      <svg class="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 14l-7 7m0 0l-7-7m7 7V3"></path>
+      </svg>
     </div>
   </div>
-</main>
+</section>
 
-
-
-
-
-<footer class="w-full bg-black text-white px-6 py-12 mt-12">
-  <div class="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-4 gap-12">
+<!-- Main Gallery Section -->
+<section class="py-16 sm:py-20 lg:py-24 px-4 sm:px-6 lg:px-8 bg-gradient-to-b from-white via-[#FFF5F7] to-white" id="gallery-content">
+  <div class="max-w-7xl mx-auto">
     
-    <!-- Logo & About -->
-    <div class="space-y-4 text-center md:text-left">
-      <img src="./assets/imags for hair and logos/Premium_Vector___Scissors_and_comb_stylist_silhouette_Design_for_a_beauty_salon-removebg-preview.png" 
-           alt="Salon Logo"
-           class="w-[100px] h-[100px] mx-auto md:mx-0 bg-[#800080] rounded">
-      <p class="text-sm leading-relaxed">
-        Welcome to our salon, where beauty meets professionalism.  
-        We specialize in <span class="text-[#FF69B4] font-semibold">makeup, nails, and hair</span> — ensuring you always leave glowing with confidence.
+    <!-- Section Header -->
+    <div class="text-center mb-12 sm:mb-16">
+      <p class="text-[#FF69B4] text-xs sm:text-sm font-bold tracking-widest uppercase mb-3">
+        ✨ Portfolio Showcase
+      </p>
+      <h2 class="section-title text-4xl sm:text-5xl lg:text-6xl font-bold bg-gradient-to-r from-[#800080] via-[#FF69B4] to-[#F4C430] bg-clip-text text-transparent mb-4">
+        Our Gallery
+      </h2>
+      <p class="text-gray-600 text-base sm:text-lg lg:text-xl mt-8 max-w-2xl mx-auto">
+        Explore our stunning collection of transformations across makeup, nails, and hair artistry
       </p>
     </div>
 
-    <!-- Quick Links -->
-    <div>
-      <h3 class="text-2xl font-bold text-[#FF69B4] mb-4 text-center md:text-left">Quick Links</h3>
-      <ul class="space-y-2 text-center md:text-left">
-        <li><a href="./index.html" class="hover:text-[#FFD1DC] transition">Home</a></li>
-        <li><a href="./about.html" class="hover:text-[#FFD1DC] transition">About Us</a></li>
-        <li><a href="./service.html#faq" class="hover:text-[#FFD1DC] transition">FAQ</a></li>
-        <li><a href="./contact.html" class="hover:text-[#FFD1DC] transition">Contact</a></li>
-        <li><a href="./contact.html#location" class="hover:text-[#FFD1DC] transition">Location</a></li>
-        <li><a href="./service.html" class="hover:text-[#FFD1DC] transition">Services</a></li>
-        <li><a href="./gallery.html" class="hover:text-[#FFD1DC] transition">Gallery</a></li>
-        <li><a href="./about.html#team" class="hover:text-[#FFD1DC] transition">Our Team</a></li>
-        <li><a href="./index.html#pricing" class="hover:text-[#FFD1DC] transition">Pricing</a></li>
-      </ul>
+    <!-- Category Filters -->
+    <div class="flex flex-wrap justify-center gap-3 sm:gap-4 mb-12 sm:mb-16" id="filter-buttons">
+      <button class="filter-button active bg-white text-[#800080] font-bold py-3 px-6 sm:px-8 rounded-full text-sm sm:text-base" data-category="all">
+        ✨ All Work
+      </button>
+      <button class="filter-button bg-white text-[#800080] font-bold py-3 px-6 sm:px-8 rounded-full text-sm sm:text-base" data-category="makeup">
+        💄 Makeup
+      </button>
+      <button class="filter-button bg-white text-[#800080] font-bold py-3 px-6 sm:px-8 rounded-full text-sm sm:text-base" data-category="nails">
+        💅 Nails
+      </button>
+      <button class="filter-button bg-white text-[#800080] font-bold py-3 px-6 sm:px-8 rounded-full text-sm sm:text-base" data-category="hair">
+        💇 Hair
+      </button>
     </div>
 
-    <!-- Social Media -->
-    <div>
-      <h3 class="text-2xl font-bold text-[#FF69B4] mb-4 text-center md:text-left">Follow Us</h3>
-      <div class="flex justify-center md:justify-start gap-5">
-        <a href="http://wa.me/2348134260378" class="hover:scale-110 transition">
-          <img src="./assets/imags for hair and logos/whatsapp.png" class="w-[40px] h-[40px]" alt="WhatsApp">
-        </a>
-        <a href="https://www.facebook.com/share/19fTZcdPKN/?mibextid=wwXIfr" class="hover:scale-110 transition">
-          <img src="./assets/imags for hair and logos/facebook.png" class="w-[40px] h-[40px]" alt="Facebook">
-        </a>
-        <a href="https://www.instagram.com/milimoon12/" class="hover:scale-110 transition">
-          <img src="./assets/imags for hair and logos/instagram.png" class="w-[40px] h-[40px]" alt="Instagram">
-        </a>
+    <!-- Gallery Grid -->
+    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8" id="gallery-grid">
+      
+      <!-- Makeup Items -->
+      <div class="gallery-item" data-category="makeup">
+        <div class="gallery-image-wrapper cursor-pointer group h-[300px] sm:h-[350px] lg:h-[400px]">
+          <span class="category-badge">Makeup</span>
+          <img src="./assets/images for makeup/download (10).jpeg" alt="Glam Makeup">
+          <div class="gallery-overlay">
+            <h3 class="text-white text-xl sm:text-2xl font-bold mb-2">Glam Makeup</h3>
+            <p class="text-white/90 text-sm">Professional evening look</p>
+          </div>
+        </div>
       </div>
-    </div>
 
-    <!-- Contact Info -->
-    <div>
-      <h3 class="text-2xl font-bold text-[#FF69B4] mb-4 text-center md:text-left">Contact</h3>
-      <ul class="space-y-3 text-center md:text-left">
-       <li>
-          <a href="mailto:christopherolawale31@gmail.com" class="flex justify-center md:justify-start items-center gap-2 hover:text-[#FFD1DC]">
-            📧 <span>yourbusiness@gmail.com</span>
-          </a>
-        </li>
-        <li>
-          <a href="tel:+2348012345678" class="flex justify-center md:justify-start items-center gap-2 hover:text-[#FFD1DC]">
-            📞 <span>+234 801 234 5678</span>
-          </a>
-        </li>
-        <li>
-          <a href="https://maps.google.com/?q=Your+Business+Address" target="_blank" class="flex justify-center md:justify-start items-center gap-2 hover:text-[#FFD1DC]">
-            📍 <span>123 Beauty Street, Lagos</span>
-          </a>
-        </li>
-      </ul>
+      <div class="gallery-item" data-category="makeup">
+        <div class="gallery-image-wrapper cursor-pointer group h-[300px] sm:h-[350px] lg:h-[400px]">
+          <span class="category-badge">Makeup</span>
+          <img src="./assets/images for makeup/Classic Red Glam Makeup Look ❤️✨.jpeg" alt="Classic Red Lips">
+          <div class="gallery-overlay">
+            <h3 class="text-white text-xl sm:text-2xl font-bold mb-2">Classic Red Lips</h3>
+            <p class="text-white/90 text-sm">Timeless elegance</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="gallery-item" data-category="makeup">
+        <div class="gallery-image-wrapper cursor-pointer group h-[300px] sm:h-[350px] lg:h-[400px]">
+          <span class="category-badge">Makeup</span>
+          <img src="./assets/images for makeup/''Discover Fashion & Art Updates on Luna Johnson's Profile!_.jpeg" alt="Bridal Look">
+          <div class="gallery-overlay">
+            <h3 class="text-white text-xl sm:text-2xl font-bold mb-2">Bridal Look</h3>
+            <p class="text-white/90 text-sm">Perfect for your special day</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="gallery-item" data-category="makeup">
+        <div class="gallery-image-wrapper cursor-pointer group h-[300px] sm:h-[350px] lg:h-[400px]">
+          <span class="category-badge">Makeup</span>
+          <img src="./assets/images for makeup/download (9).jpeg" alt="Natural Radiance">
+          <div class="gallery-overlay">
+            <h3 class="text-white text-xl sm:text-2xl font-bold mb-2">Natural Radiance</h3>
+            <p class="text-white/90 text-sm">Fresh & glowing</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="gallery-item" data-category="makeup">
+        <div class="gallery-image-wrapper cursor-pointer group h-[300px] sm:h-[350px] lg:h-[400px]">
+          <span class="category-badge">Makeup</span>
+          <img src="./assets/images for makeup/download (8).jpeg" alt="Smokey Eyes">
+          <div class="gallery-overlay">
+            <h3 class="text-white text-xl sm:text-2xl font-bold mb-2">Smokey Eyes</h3>
+            <p class="text-white/90 text-sm">Dramatic & bold</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="gallery-item" data-category="makeup">
+        <div class="gallery-image-wrapper cursor-pointer group h-[300px] sm:h-[350px] lg:h-[400px]">
+          <span class="category-badge">Makeup</span>
+          <img src="./assets/images for makeup/Flawless Eyeshadow Application with Makeup Brush.jpeg" alt="Evening Glow">
+          <div class="gallery-overlay">
+            <h3 class="text-white text-xl sm:text-2xl font-bold mb-2">Evening Glow</h3>
+            <p class="text-white/90 text-sm">Sophisticated & chic</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Nails Items -->
+      <div class="gallery-item" data-category="nails">
+        <div class="gallery-image-wrapper cursor-pointer group h-[300px] sm:h-[350px] lg:h-[400px]">
+          <span class="category-badge">Nails</span>
+          <img src="./assets/images for nails/🖤 Anti-Valentine's Day Nails Ideas.jpeg" alt="French Tips">
+          <div class="gallery-overlay">
+            <h3 class="text-white text-xl sm:text-2xl font-bold mb-2">French Tips</h3>
+            <p class="text-white/90 text-sm">Classic & timeless</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="gallery-item" data-category="nails">
+        <div class="gallery-image-wrapper cursor-pointer group h-[300px] sm:h-[350px] lg:h-[400px]">
+          <span class="category-badge">Nails</span>
+          <img src="./assets/images for nails/download.jpeg" alt="Ombre Nails">
+          <div class="gallery-overlay">
+            <h3 class="text-white text-xl sm:text-2xl font-bold mb-2">Ombre Nails</h3>
+            <p class="text-white/90 text-sm">Gradient perfection</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="gallery-item" data-category="nails">
+        <div class="gallery-image-wrapper cursor-pointer group h-[300px] sm:h-[350px] lg:h-[400px]">
+          <span class="category-badge">Nails</span>
+          <img src="./assets/images for nails/download (6).jpeg" alt="Glitter Glam">
+          <div class="gallery-overlay">
+            <h3 class="text-white text-xl sm:text-2xl font-bold mb-2">Glitter Glam</h3>
+            <p class="text-white/90 text-sm">Sparkle & shine</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="gallery-item" data-category="nails">
+        <div class="gallery-image-wrapper cursor-pointer group h-[300px] sm:h-[350px] lg:h-[400px]">
+          <span class="category-badge">Nails</span>
+          <img src="./assets/images for nails/Glossy Red Stiletto Nails with Hand-Painted Floral Art.jpeg" alt="Matte Finish">
+          <div class="gallery-overlay">
+            <h3 class="text-white text-xl sm:text-2xl font-bold mb-2">Matte Finish</h3>
+            <p class="text-white/90 text-sm">Sophisticated elegance</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="gallery-item" data-category="nails">
+        <div class="gallery-image-wrapper cursor-pointer group h-[300px] sm:h-[350px] lg:h-[400px]">
+          <span class="category-badge">Nails</span>
+          <img src="./assets/images for nails/download (2).jpeg" alt="Floral Art">
+          <div class="gallery-overlay">
+            <h3 class="text-white text-xl sm:text-2xl font-bold mb-2">Floral Art</h3>
+            <p class="text-white/90 text-sm">Delicate & beautiful</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="gallery-item" data-category="nails">
+        <div class="gallery-image-wrapper cursor-pointer group h-[300px] sm:h-[350px] lg:h-[400px]">
+          <span class="category-badge">Nails</span>
+          <img src="./assets/images for nails/download (3).jpeg" alt="Luxury Chrome">
+          <div class="gallery-overlay">
+            <h3 class="text-white text-xl sm:text-2xl font-bold mb-2">Luxury Chrome</h3>
+            <p class="text-white/90 text-sm">Metallic magic</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Hair Items -->
+      <div class="gallery-item" data-category="hair">
+        <div class="gallery-image-wrapper cursor-pointer group h-[300px] sm:h-[350px] lg:h-[400px]">
+          <span class="category-badge">Hair</span>
+          <img src="./assets/imags for hair and logos/cute-red.jpeg" alt="Bohemian Braids">
+          <div class="gallery-overlay">
+            <h3 class="text-white text-xl sm:text-2xl font-bold mb-2">Bohemian Braids</h3>
+            <p class="text-white/90 text-sm">Free-spirited style</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="gallery-item" data-category="hair">
+        <div class="gallery-image-wrapper cursor-pointer group h-[300px] sm:h-[350px] lg:h-[400px]">
+          <span class="category-badge">Hair</span>
+          <img src="./assets/imags for hair and logos/download (8).jpeg" alt="Box Braids">
+          <div class="gallery-overlay">
+            <h3 class="text-white text-xl sm:text-2xl font-bold mb-2">Box Braids</h3>
+            <p class="text-white/90 text-sm">With colored extensions</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="gallery-item" data-category="hair">
+        <div class="gallery-image-wrapper cursor-pointer group h-[300px] sm:h-[350px] lg:h-[400px]">
+          <span class="category-badge">Hair</span>
+          <img src="./assets/imags for hair and logos/download (13).jpeg" alt="Body Wave Wig">
+          <div class="gallery-overlay">
+            <h3 class="text-white text-xl sm:text-2xl font-bold mb-2">Body Wave Wig</h3>
+            <p class="text-white/90 text-sm">Natural flow & volume</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="gallery-item" data-category="hair">
+        <div class="gallery-image-wrapper cursor-pointer group h-[300px] sm:h-[350px] lg:h-[400px]">
+          <span class="category-badge">Hair</span>
+          <img src="./assets/imags for hair and logos/download (5).jpeg" alt="Tapered Cut">
+          <div class="gallery-overlay">
+            <h3 class="text-white text-xl sm:text-2xl font-bold mb-2">Tapered Cut</h3>
+            <p class="text-white/90 text-sm">With side design</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="gallery-item" data-category="hair">
+        <div class="gallery-image-wrapper cursor-pointer group h-[300px] sm:h-[350px] lg:h-[400px]">
+          <span class="category-badge">Hair</span>
+          <img src="./assets/imags for hair and logos/download (18).jpeg" alt="Curly Wig">
+          <div class="gallery-overlay">
+            <h3 class="text-white text-xl sm:text-2xl font-bold mb-2">Long Curly Wig</h3>
+            <p class="text-white/90 text-sm">Wet look curls</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="gallery-item" data-category="hair">
+        <div class="gallery-image-wrapper cursor-pointer group h-[300px] sm:h-[350px] lg:h-[400px]">
+          <span class="category-badge">Hair</span>
+          <img src="./assets/imags for hair and logos/download (20).jpeg" alt="Cornrows">
+          <div class="gallery-overlay">
+            <h3 class="text-white text-xl sm:text-2xl font-bold mb-2">Cornrows</h3>
+            <p class="text-white/90 text-sm">With beads & cowries</p>
+          </div>
+        </div>
+      </div>
+
     </div>
   </div>
+</section>
 
-  <!-- Copyright -->
-  <div class="border-t border-gray-700 mt-12 pt-6 text-center text-sm">
-    © 2025 Salon Website. All Rights Reserved.
+<!-- Lightbox Modal -->
+<div id="lightbox" class="lightbox">
+  <div class="lightbox-close" id="lightbox-close">
+    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
+    </svg>
   </div>
-</footer>
-<script src="./script.js"></script>
+  
+  <div class="lightbox-content">
+    <div class="lightbox-nav prev" id="lightbox-prev">
+      <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M15 19l-7-7 7-7"></path>
+      </svg>
+    </div>
+    
+    <img id="lightbox-image" src="" alt="" class="max-w-full max-h-[85vh] rounded-2xl shadow-2xl">
+    
+    <div class="lightbox-nav next" id="lightbox-next">
+      <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M9 5l7 7-7 7"></path>
+      </svg>
+    </div>
+    
+    <div class="absolute bottom-6 left-1/2 transform -translate-x-1/2 text-white text-center bg-black/50 backdrop-blur-sm px-6 py-3 rounded-full">
+      <p id="lightbox-title" class="font-bold text-base sm:text-lg"></p>
+      <p id="lightbox-counter" class="text-sm text-white/80 mt-1"></p>
+    </div>
+  </div>
+</div>
+
+
+
+
+
+<footer class="beauty-footer-wrapper relative">
+    
+    <!-- Background Pattern -->
+    <div class="beauty-footer-bg-pattern"></div>
+    
+    <!-- Decorative Ornaments -->
+    <div class="beauty-footer-ornament beauty-footer-ornament-1"></div>
+    <div class="beauty-footer-ornament beauty-footer-ornament-2"></div>
+
+    <div class="relative z-10 px-6 py-12 md:py-16">
+      
+      <!-- Newsletter Section -->
+      <div class="max-w-4xl mx-auto beauty-footer-newsletter">
+        <div class="text-center mb-6">
+          <h3 class="text-2xl md:text-3xl font-bold beauty-footer-title-gradient mb-2">
+            Stay Updated
+          </h3>
+          <p class="text-gray-300 text-sm md:text-base">
+            Subscribe to get exclusive beauty tips and special offers
+          </p>
+        </div>
+        <form class="flex flex-col sm:flex-row gap-3 max-w-xl mx-auto">
+          <input 
+            type="email" 
+            placeholder="Enter your email address" 
+            class="beauty-footer-newsletter-input flex-1"
+            required>
+          <button type="submit" class="beauty-footer-newsletter-btn">
+            Subscribe ✨
+          </button>
+        </form>
+      </div>
+
+      <!-- Main Footer Content -->
+      <div class="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12">
+        
+        <!-- Logo & About Section -->
+        <div class="beauty-footer-section text-center md:text-left">
+          <div class="beauty-footer-logo-frame mb-6 mx-auto md:mx-0">
+            <img src="./assets/imags for hair and logos/Premium_Vector___Scissors_and_comb_stylist_silhouette_Design_for_a_beauty_salon-removebg-preview.png" 
+                 alt="Beauty Studio Logo"
+                 class="w-[100px] h-[100px]">
+          </div>
+          <h3 class="text-xl font-bold text-white mb-3">Beauty Studio</h3>
+          <p class="text-gray-300 text-sm leading-relaxed">
+            Welcome to our salon, where beauty meets professionalism. 
+            We specialize in <span class="text-pink-400 font-semibold">makeup, nails, and hair</span> — 
+            ensuring you always leave glowing with confidence.
+          </p>
+        </div>
+
+        <!-- Quick Links Section -->
+        <div class="beauty-footer-section">
+          <h3 class="text-2xl font-bold beauty-footer-title-gradient mb-6 text-center md:text-left">
+            Quick Links
+          </h3>
+          <ul class="space-y-3 text-gray-300 text-sm">
+            <li><a href="./homepage.html" class="beauty-footer-link-item block">Home</a></li>
+            <li><a href="./about.html" class="beauty-footer-link-item block">About Us</a></li>
+            <li><a href="./service.html" class="beauty-footer-link-item block">Services</a></li>
+            <li><a href="./gallery.html" class="beauty-footer-link-item block">Gallery</a></li>
+            <li><a href="./service.html#faq" class="beauty-footer-link-item block">FAQ</a></li>
+            <li><a href="./about.html#team" class="beauty-footer-link-item block">Our Team</a></li>
+            <li><a href="./homepage.html" class="beauty-footer-link-item block">Pricing</a></li>
+            <li><a href="./contact.html" class="beauty-footer-link-item block">Contact</a></li>
+            <li><a href="./contact.html#location" class="beauty-footer-link-item block">Location</a></li>
+          </ul>
+        </div>
+
+        <!-- Social Media Section -->
+        <div class="beauty-footer-section">
+          <h3 class="text-2xl font-bold beauty-footer-title-gradient mb-6 text-center md:text-left">
+            Follow Us
+          </h3>
+          <p class="text-gray-300 text-sm mb-6 text-center md:text-left">
+            Join our community and stay connected
+          </p>
+          <div class="flex justify-center md:justify-start gap-4">
+            <a href="http://wa.me/2348134260378" 
+               class="beauty-footer-social-icon"
+               aria-label="WhatsApp">
+              <img src="./assets/imags for hair and logos/whatsapp.png" 
+                   class="w-[28px] h-[28px]" 
+                   alt="WhatsApp">
+            </a>
+            <a href="https://www.facebook.com/share/19fTZcdPKN/?mibextid=wwXIfr" 
+               class="beauty-footer-social-icon"
+               aria-label="Facebook">
+              <img src="./assets/imags for hair and logos/facebook.png" 
+                   class="w-[28px] h-[28px]" 
+                   alt="Facebook">
+            </a>
+            <a href="https://www.instagram.com/milimoon12/" 
+               class="beauty-footer-social-icon"
+               aria-label="Instagram">
+              <img src="./assets/imags for hair and logos/instagram.png" 
+                   class="w-[28px] h-[28px]" 
+                   alt="Instagram">
+            </a>
+          </div>
+        </div>
+
+        <!-- Contact Info Section -->
+        <div class="beauty-footer-section">
+          <h3 class="text-2xl font-bold beauty-footer-title-gradient mb-6 text-center md:text-left">
+            Get In Touch
+          </h3>
+          <ul class="space-y-3">
+            <li>
+              <a href="mailto:yourbusiness@gmail.com" class="beauty-footer-contact-item">
+                <span class="beauty-footer-contact-icon">📧</span>
+                <span class="text-gray-300 text-sm">yourbusiness@gmail.com</span>
+              </a>
+            </li>
+            <li>
+              <a href="tel:+2348012345678" class="beauty-footer-contact-item">
+                <span class="beauty-footer-contact-icon">📞</span>
+                <span class="text-gray-300 text-sm">+234 801 234 5678</span>
+              </a>
+            </li>
+            <li>
+              <a href="https://maps.google.com/?q=123+Beauty+Street+Lagos" 
+                 target="_blank" 
+                 class="beauty-footer-contact-item">
+                <span class="beauty-footer-contact-icon">📍</span>
+                <span class="text-gray-300 text-sm">123 Beauty Street, Lagos</span>
+              </a>
+            </li>
+          </ul>
+        </div>
+
+      </div>
+
+      <!-- Decorative Divider -->
+      <div class="beauty-footer-divider max-w-7xl mx-auto"></div>
+
+      <!-- Copyright Section -->
+      <div class="beauty-footer-copyright">
+        <div class="max-w-7xl mx-auto text-center">
+          <p class="text-gray-300 text-sm mb-2">
+            © 2025 <span class="text-pink-400 font-semibold">Beauty Studio</span>. All Rights Reserved.
+          </p>
+          <p class="text-gray-400 text-xs">
+            Crafted with <span class="beauty-footer-heart">♥</span> for Beautiful People
+          </p>
+          <div class="flex flex-wrap justify-center gap-4 mt-4 text-xs text-gray-400">
+            <a href="#" class="hover:text-pink-400 transition">Privacy Policy</a>
+            <span>•</span>
+            <a href="#" class="hover:text-pink-400 transition">Terms of Service</a>
+            <span>•</span>
+            <a href="#" class="hover:text-pink-400 transition">Cookie Policy</a>
+          </div>
+        </div>
+      </div>
+
+    </div>
+
+    <!-- Back to Top Button -->
+    <button class="beauty-footer-back-to-top" id="beautyBackToTop" aria-label="Back to top">
+      <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M5 10l7-7m0 0l7 7m-7-7v18"></path>
+      </svg>
+    </button>
+
+  </footer>
+
+<script src="./gallery.js"></script>
 </body>
 </html>

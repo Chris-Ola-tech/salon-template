@@ -5,300 +5,683 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title> Salon Website Contact</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
   <link rel="icon" type="image/png" href="./assets/images for nails/hair.png">
    <script src="https://cdn.tailwindcss.com"></script>
-  <script>
-    tailwind.config = {
-      theme: {
-        extend: {
-          fontFamily: {
-            poppins: ['Poppins', 'sans-serif'],
-          }
-        }
-      }
-    }
-  </script>
-
-  <style>
-    body {
-      font-family: 'Poppins', sans-serif;
-    }
-  </style>
-  <!-- Hot Pink – #FF69B4 (attention grabber)
-
-Light Pink – #FFD1DC (soft sections)
-
-Deep Purple – #800080 (royal luxury touch)
-
-White – #FFFFFF (clean background)
-
-Gold Accent – #F4C430 (premium feel) -->
+   <link rel="stylesheet" href="./contact.css">
+   <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 </head>
 <body>
-    <header id="navbar" class="fixed top-0 left-0 w-full h-[90px] z-50 transition-colors duration-300 bg-transparent">
-  <div class="flex items-center justify-between px-6 h-full">
+    <!-- Header -->
+  <header id="beautyContactNavbar" class="beauty-contact-header fixed top-0 left-0 w-full h-[90px] z-50 bg-transparent">
+    <div class="flex items-center justify-between px-6 h-full">
 
-    <!-- Logo -->
-    <div>
-      <img class="w-[100px] h-[100px]" 
-           src="./assets/imags for hair and logos/Premium_Vector___Scissors_and_comb_stylist_silhouette_Design_for_a_beauty_salon-removebg-preview.png">
+      <!-- Logo -->
+      <div>
+        <img class="beauty-contact-logo w-[100px] h-[100px] cursor-pointer" 
+             src="./assets/imags for hair and logos/Premium_Vector___Scissors_and_comb_stylist_silhouette_Design_for_a_beauty_salon-removebg-preview.png"
+             alt="Beauty Studio Logo">
+      </div>
+
+      <!-- Desktop Menu -->
+      <div class="hidden md:block">
+        <ul class="flex gap-10">
+          <li><a href="./homepage.html" class="beauty-contact-nav-item font-bold text-xl text-white">Home</a></li>
+          <li><a href="./about.html" class="beauty-contact-nav-item font-bold text-xl text-white">About</a></li>
+          <li><a href="./service.html" class="beauty-contact-nav-item font-bold text-xl text-white">Service</a></li>
+          <li><a href="./gallery.html" class="beauty-contact-nav-item font-bold text-xl text-white">Gallery</a></li>
+          <li><a href="./contact.html" class="beauty-contact-nav-item font-bold text-xl text-white">Contact</a></li>
+        </ul>
+      </div>
+
+      <!-- Mobile Hamburger -->
+      <div class="md:hidden">
+        <button id="beautyContactMenuBtn" class="beauty-contact-menu-btn">
+          <img class="w-[40px] h-[40px]" src="./assets/imags for hair and logos/menus.png" alt="Menu">
+        </button>
+      </div>
     </div>
 
-    <!-- Desktop Menu -->
-    <div class="hidden md:block">
-      <ul class="flex gap-10">
-        <li class="font-bold text-xl text-white hover:text-[#FFD1DC] hover:underline"><a href="./index.html">Home</a></li>
-        <li class="font-bold text-xl text-white hover:text-[#FFD1DC] hover:underline"><a href="./about.html">About</a></li>
-        <li class="font-bold text-xl text-white hover:text-[#FFD1DC] hover:underline"><a href="./service.html">Service</a></li>
-        <li class="font-bold text-xl text-white hover:text-[#FFD1DC] hover:underline"><a href="./gallery.html">Gallery</a></li>
-        <li class="font-bold text-xl text-white hover:text-[#FFD1DC] hover:underline"><a href="./contact.html">Contact</a></li>
-      </ul>
+    <!-- Mobile Overlay -->
+    <div id="beautyContactOverlay" class="beauty-contact-overlay hidden fixed inset-0 bg-black/50 z-40"></div>
+
+    <!-- Mobile Slide-In Menu -->
+    <div id="beautyContactMobileMenu" class="beauty-contact-mobile-menu fixed top-0 right-[-100%] h-full w-64 bg-[#800080] flex flex-col items-center justify-center space-y-8 z-50">
+      <a href="./homepage.html" class="beauty-contact-mobile-link font-bold text-xl text-white hover:text-[#FFD1DC]">Home</a>
+      <a href="./about.html" class="beauty-contact-mobile-link font-bold text-xl text-white hover:text-[#FFD1DC]">About</a>
+      <a href="./service.html" class="beauty-contact-mobile-link font-bold text-xl text-white hover:text-[#FFD1DC]">Service</a>
+      <a href="./gallery.html" class="beauty-contact-mobile-link font-bold text-xl text-white hover:text-[#FFD1DC]">Gallery</a>
+      <a href="./contact.html" class="beauty-contact-mobile-link font-bold text-xl text-white hover:text-[#FFD1DC]">Contact</a>
     </div>
+  </header>
 
-    <!-- Mobile Hamburger -->
-    <div class="md:hidden">
-      <button id="menu-btn">
-        <img class="w-[40px] h-[40px]" src="./assets/imags for hair and logos/menus.png" alt="Menu">
-      </button>
-    </div>
-  </div>
-
-  <!-- Mobile Overlay -->
-  <div id="overlay" class="hidden fixed inset-0 bg-black/50 z-40"></div>
-
-  <!-- Mobile Slide-In Menu -->
-  <div id="mobile-menu" class="fixed top-0 right-[-100%] h-full w-64 bg-[#800080] flex flex-col items-center justify-center space-y-8 transition-right duration-300 z-50">
-    <a href="./index.html" class="font-bold text-xl text-white hover:text-[#FFD1DC] hover:underline">Home</a>
-    <a href="./about.html" class="font-bold text-xl text-white hover:text-[#FFD1DC] hover:underline">About</a>
-    <a href="./service.html" class="font-bold text-xl text-white hover:text-[#FFD1DC] hover:underline">Service</a>
-    <a href="./gallery.html" class="font-bold text-xl text-white hover:text-[#FFD1DC] hover:underline">Gallery</a>
-    <a href="./contact.html" class="font-bold text-xl text-white hover:text-[#FFD1DC] hover:underline">Contact</a>
-  </div>
-</header>
-
-<h1 class="text-center text-3xl md:text-4xl text-[#FFD1DC] font-bold mb-16 mt-12">
-  Contact Us
-  </h1>
-<section class="w-full h-[500px] md:h-[700px] mt-8" id="location">
-  <!-- Google Map Embed -->
-  <iframe 
-    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d126610.68535848249!2d3.80299294335938!3d7.4004297000000125!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x10399387d2822f11%3A0xe6387852608cf4ac!2sDREAD-IT%20Unisex%20Salon!5e0!3m2!1sen!2sng!4v1758453204745!5m2!1sen!2sng"  
-    width="100%" 
-    height="100%" 
-    style="border:0;" 
-    allowfullscreen="" 
-    loading="lazy" 
-    referrerpolicy="no-referrer-when-downgrade">
-  </iframe>
-</section>
-
-
-
-
-
-<section class="px-4">
-  <div>
-    <h1 class="text-center text-3xl md:text-4xl text-[#FFD1DC] font-bold mb-16 mt-12">
-      Get In Touch
-    </h1>
-  </div>
-  <div>
-    <form id="contactForm" class="max-w-4xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-6">
-      <!-- Name -->
-      <input id="name" type="text" placeholder="Name" required
-        class="w-full rounded border border-gray-300 bg-[#FFD1DC] py-3 px-4 focus:outline-none focus:ring-2 focus:ring-[#800080]">
-
-      <!-- Email -->
-      <input id="email" type="email" placeholder="Email" required
-        class="w-full rounded border border-gray-300 bg-[#FFD1DC] py-3 px-4 focus:outline-none focus:ring-2 focus:ring-[#800080]">
-
-      <!-- Phone -->
-      <input id="phone" type="tel" placeholder="Phone" required
-        class="w-full rounded border border-gray-300 bg-[#FFD1DC] py-3 px-4 focus:outline-none focus:ring-2 focus:ring-[#800080]">
-
-      <!-- Subject -->
-      <input id="subject" type="text" placeholder="Subject"
-        class="w-full rounded border border-gray-300 bg-[#FFD1DC] py-3 px-4 focus:outline-none focus:ring-2 focus:ring-[#800080]">
-
-      <!-- Message (full width) -->
-      <textarea id="message" placeholder="Message" required
-        class="w-full md:col-span-2 rounded border bg-[#FFD1DC] border-gray-300 py-3 px-4 resize-none focus:outline-none focus:ring-2 focus:ring-[#800080] h-32"></textarea>
-
-      <!-- Submit Button -->
-       <div class="flex justify-end">
-          <button type="button" id="sendBtn"
-        class=" md:mr-auto bg-[#800080] hover:bg-[#FF69B4] text-white py-3 px-6 rounded-lg font-semibold transition">
-        Send Message
-      </button>
-       </div>
-    </form>
-  </div>
-</section>
-
- 
-<section class="w-full bg-[#FFF0F5] py-12">
-  <h2 class="text-center text-3xl md:text-4xl font-bold text-[#800080] mb-10">
-    Contact Information
-  </h2>
-
-  <div id="contact-cards" class="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-4 gap-8 px-6">
+  <!-- Hero Section -->
+  <section class="beauty-contact-hero relative">
     
-    <!-- Phone -->
-    <div class="info-card bg-white shadow-lg rounded-lg p-6 text-center border-t-4 border-[#FF69B4] transition">
-      <h3 class="text-xl font-semibold text-[#800080] mb-3">📞 Phone</h3>
-      <p class="text-gray-700">(+234) 801 234 5678</p>
-      <p class="text-gray-700">(+234) 809 876 5432</p>
-    </div>
-
-    <!-- Email -->
-    <div class="info-card bg-white shadow-lg rounded-lg p-6 text-center border-t-4 border-[#FFD1DC] transition">
-      <h3 class="text-xl font-semibold text-[#800080] mb-3">📧 Email</h3>
-      <p class="text-gray-700">info@salonhub.com</p>
-      <p class="text-gray-700">support@salonhub.com</p>
-    </div>
-
-    <!-- Address -->
-    <div class="info-card bg-white shadow-lg rounded-lg p-6 text-center border-t-4 border-[#800080] transition">
-      <h3 class="text-xl font-semibold text-[#800080] mb-3">📍 Address</h3>
-      <p class="text-gray-700">45 Queen’s Road</p>
-      <p class="text-gray-700">Lagos, Nigeria</p>
-    </div>
-
-    <!-- Hours -->
-    <div class="info-card bg-white shadow-lg rounded-lg p-6 text-center border-t-4 border-[#FF69B4] transition">
-      <h3 class="text-xl font-semibold text-[#800080] mb-3">🕒 Hours</h3>
-      <p class="text-gray-700">Mon–Fri: 9am – 6pm</p>
-      <p class="text-gray-700">Sat: 10am – 4pm</p>
-      <p class="text-gray-700">Sun: Closed</p>
-    </div>
-
-  </div>
-</section>
-
-
-
-
-
-<footer class="w-full bg-black text-white px-6 py-12 mt-12">
-  <div class="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-4 gap-12">
+    <!-- Background Pattern -->
+    <div class="beauty-contact-hero-bg"></div>
     
-    <!-- Logo & About -->
-    <div class="space-y-4 text-center md:text-left">
-      <img src="./assets/imags for hair and logos/Premium_Vector___Scissors_and_comb_stylist_silhouette_Design_for_a_beauty_salon-removebg-preview.png" 
-           alt="Salon Logo"
-           class="w-[100px] h-[100px] mx-auto md:mx-0 bg-[#800080] rounded">
-      <p class="text-sm leading-relaxed">
-        Welcome to our salon, where beauty meets professionalism.  
-        We specialize in <span class="text-[#FF69B4] font-semibold">makeup, nails, and hair</span> — ensuring you always leave glowing with confidence.
+    <!-- Decorative Orbs -->
+    <div class="beauty-contact-orb beauty-contact-orb-1"></div>
+    <div class="beauty-contact-orb beauty-contact-orb-2"></div>
+    <div class="beauty-contact-orb beauty-contact-orb-3"></div>
+
+    <!-- Hero Content -->
+    <div class="relative z-10 flex flex-col items-center justify-center min-h-screen px-4 py-24 text-center">
+      
+      <!-- Top Badge -->
+      <div class="beauty-contact-badge inline-flex items-center gap-2 bg-white/10 backdrop-blur-md border border-pink-300/30 px-6 py-3 rounded-full mb-8">
+        <span class="w-2.5 h-2.5 bg-pink-400 rounded-full animate-pulse"></span>
+        <p class="text-pink-200 text-sm md:text-base font-semibold tracking-widest uppercase">
+          We're Ready To Help
+        </p>
+        <span class="w-2.5 h-2.5 bg-pink-400 rounded-full animate-pulse" style="animation-delay: 0.5s;"></span>
+      </div>
+
+      <!-- Main Title -->
+      <h1 class="beauty-contact-title text-5xl sm:text-6xl md:text-7xl lg:text-8xl font-bold text-white mb-6 leading-tight px-4">
+        Let's Connect
+      </h1>
+      
+      <h2 class="beauty-contact-subtitle text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold mb-8 leading-tight">
+        <span class="beauty-contact-gradient-text">Get In Touch</span>
+      </h2>
+
+      <!-- Decorative Divider -->
+      <div class="beauty-contact-divider mb-8"></div>
+
+      <!-- Description -->
+      <p class="beauty-contact-description text-base md:text-lg lg:text-xl text-gray-300 max-w-3xl mb-16 leading-relaxed px-4">
+        Have questions? Ready to book your transformation? We'd love to hear from you! 
+        Our friendly team is here to answer your queries and help you schedule the perfect appointment. 
+        Reach out through any channel below — we typically respond within 24 hours.
       </p>
+
+      <!-- Contact Cards Grid -->
+      <div class="beauty-contact-cards grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 max-w-6xl w-full mb-16 px-4">
+        
+        <!-- Phone Card -->
+        <a href="tel:+2348012345678" class="beauty-contact-card rounded-3xl p-8 text-center group">
+          <div class="beauty-contact-icon-circle mx-auto mb-6">
+            <svg class="w-10 h-10 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"></path>
+            </svg>
+          </div>
+          <h3 class="text-white font-bold text-xl md:text-2xl mb-3">Call Us Now</h3>
+          <p class="text-pink-200 text-sm md:text-base mb-4">Monday - Saturday<br>9:00 AM - 7:00 PM</p>
+          <p class="text-white font-bold text-lg">+234 801 234 5678</p>
+          <div class="mt-4 text-pink-300 text-sm font-semibold opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+            Tap to Call →
+          </div>
+        </a>
+
+        <!-- Email Card -->
+        <a href="mailto:yourbusiness@gmail.com" class="beauty-contact-card rounded-3xl p-8 text-center group">
+          <div class="beauty-contact-icon-circle mx-auto mb-6">
+            <svg class="w-10 h-10 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"></path>
+            </svg>
+          </div>
+          <h3 class="text-white font-bold text-xl md:text-2xl mb-3">Email Us</h3>
+          <p class="text-pink-200 text-sm md:text-base mb-4">Quick Response<br>Within 24 Hours</p>
+          <p class="text-white font-bold text-lg">yourbusiness@gmail.com</p>
+          <div class="mt-4 text-pink-300 text-sm font-semibold opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+            Send Email →
+          </div>
+        </a>
+
+        <!-- Location Card -->
+        <a href="https://maps.google.com/?q=123+Beauty+Street+Lagos" target="_blank" class="beauty-contact-card rounded-3xl p-8 text-center group sm:col-span-2 lg:col-span-1">
+          <div class="beauty-contact-icon-circle mx-auto mb-6">
+            <svg class="w-10 h-10 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"></path>
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"></path>
+            </svg>
+          </div>
+          <h3 class="text-white font-bold text-xl md:text-2xl mb-3">Visit Our Studio</h3>
+          <p class="text-pink-200 text-sm md:text-base mb-4">Come Experience<br>Our Beautiful Space</p>
+          <p class="text-white font-bold text-lg">123 Beauty Street, Lagos</p>
+          <div class="mt-4 text-pink-300 text-sm font-semibold opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+            Get Directions →
+          </div>
+        </a>
+
+      </div>
+
+      <!-- Social Media Quick Links -->
+      <div class="beauty-contact-cards flex flex-wrap justify-center gap-4 mb-16">
+        <a href="http://wa.me/2348134260378" class="inline-flex items-center gap-2 bg-white/10 backdrop-blur-md border border-green-400/30 px-6 py-3 rounded-full hover:bg-white/20 hover:border-green-400/60 transition-all duration-300 group">
+          <span class="text-2xl"></span>
+          <span class="text-white font-semibold">WhatsApp</span>
+        </a>
+        <a href="https://www.facebook.com/share/19fTZcdPKN/?mibextid=wwXIfr" class="inline-flex items-center gap-2 bg-white/10 backdrop-blur-md border border-blue-400/30 px-6 py-3 rounded-full hover:bg-white/20 hover:border-blue-400/60 transition-all duration-300 group">
+          <span class="text-2xl"></span>
+          <span class="text-white font-semibold">Facebook</span>
+        </a>
+        <a href="https://www.instagram.com/milimoon12/" class="inline-flex items-center gap-2 bg-white/10 backdrop-blur-md border border-pink-400/30 px-6 py-3 rounded-full hover:bg-white/20 hover:border-pink-400/60 transition-all duration-300 group">
+          <span class="text-2xl"></span>
+          <span class="text-white font-semibold">Instagram</span>
+        </a>
+      </div>
+
+      <!-- Scroll Indicator -->
+      <div class="beauty-contact-scroll-hint cursor-pointer" onclick="window.scrollBy({top: window.innerHeight, behavior: 'smooth'})">
+        <div class="flex flex-col items-center gap-2">
+          <p class="text-gray-400 text-xs uppercase tracking-wider">Scroll For Contact Form</p>
+          <svg class="w-6 h-10 text-pink-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 14l-7 7m0 0l-7-7m7 7V3"></path>
+          </svg>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+<section class="py-16 md:py-20 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto">
+  
+  <!-- Section Header -->
+  <div class="text-center mb-16">
+    <p class="text-[#FF69B4] text-sm font-semibold tracking-widest uppercase mb-3">Visit Us Today</p>
+    <h2 class="typography-serif-elegant text-4xl md:text-5xl lg:text-6xl iridescent-typography-sequence font-bold mb-4">
+      Find Our Location
+    </h2>
+    <div class="divider-line"></div>
+    <p class="text-gray-600 mt-4 max-w-2xl mx-auto text-base md:text-lg">
+      Located in the heart of the city, we're easy to find and ready to welcome you
+    </p>
+  </div>
+
+  <!-- Location Info Grid (Above Map) -->
+  <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mb-12">
+    
+    <!-- Address Card -->
+    <div class="spatial-information-repository">
+      <div class="icon-container-animated mb-4">
+        <svg class="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"></path>
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"></path>
+        </svg>
+      </div>
+      <h3 class="text-xl font-bold text-[#800080] mb-2">Our Address</h3>
+      <p class="text-gray-600 leading-relaxed">DREAD-IT Unisex Salon<br>Ibadan, Oyo State<br>Nigeria</p>
     </div>
 
-    <!-- Quick Links -->
-    <div>
-      <h3 class="text-2xl font-bold text-[#FF69B4] mb-4 text-center md:text-left">Quick Links</h3>
-      <ul class="space-y-2 text-center md:text-left">
-        <li><a href="./index.html" class="hover:text-[#FFD1DC] transition">Home</a></li>
-        <li><a href="./about.html" class="hover:text-[#FFD1DC] transition">About Us</a></li>
-        <li><a href="./service.html#faq" class="hover:text-[#FFD1DC] transition">FAQ</a></li>
-        <li><a href="./contact.html" class="hover:text-[#FFD1DC] transition">Contact</a></li>
-        <li><a href="./contact.html#location" class="hover:text-[#FFD1DC] transition">Location</a></li>
-        <li><a href="./service.html" class="hover:text-[#FFD1DC] transition">Services</a></li>
-        <li><a href="./gallery.html" class="hover:text-[#FFD1DC] transition">Gallery</a></li>
-        <li><a href="./about.html#team" class="hover:text-[#FFD1DC] transition">Our Team</a></li>
-        <li><a href="./index.html#pricing" class="hover:text-[#FFD1DC] transition">Pricing</a></li>
-      </ul>
+    <!-- Hours Card -->
+    <div class="spatial-information-repository">
+      <div class="icon-container-animated mb-4">
+        <svg class="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+        </svg>
+      </div>
+      <h3 class="text-xl font-bold text-[#800080] mb-3">Opening Hours</h3>
+      <div class="space-y-2 text-gray-600">
+        <p class="flex justify-between">
+          <span class="font-semibold">Mon - Fri:</span>
+          <span>9:00 AM - 7:00 PM</span>
+        </p>
+        <p class="flex justify-between">
+          <span class="font-semibold">Saturday:</span>
+          <span>10:00 AM - 6:00 PM</span>
+        </p>
+        <p class="flex justify-between">
+          <span class="font-semibold">Sunday:</span>
+          <span>Closed</span>
+        </p>
+      </div>
+      <div class="mt-4">
+        <span class="operational-status-indicator">Open Now</span>
+      </div>
     </div>
 
-    <!-- Social Media -->
-    <div>
-      <h3 class="text-2xl font-bold text-[#FF69B4] mb-4 text-center md:text-left">Follow Us</h3>
-      <div class="flex justify-center md:justify-start gap-5">
-        <a href="http://wa.me/2348134260378" class="hover:scale-110 transition">
-          <img src="./assets/imags for hair and logos/whatsapp.png" class="w-[40px] h-[40px]" alt="WhatsApp">
+    <!-- Contact Card -->
+    <div class="spatial-information-repository md:col-span-2 lg:col-span-1">
+      <div class="icon-container-animated mb-4">
+        <svg class="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"></path>
+        </svg>
+      </div>
+      <h3 class="text-xl font-bold text-[#800080] mb-3">Get In Touch</h3>
+      <div class="space-y-3">
+        <a href="tel:+2348134260378" class="block text-gray-600 hover:text-[#FF69B4] transition font-semibold">
+          📞 +234 813 426 0378
         </a>
-        <a href="https://www.facebook.com/share/19fTZcdPKN/?mibextid=wwXIfr" class="hover:scale-110 transition">
-          <img src="./assets/imags for hair and logos/facebook.png" class="w-[40px] h-[40px]" alt="Facebook">
-        </a>
-        <a href="https://www.instagram.com/milimoon12/" class="hover:scale-110 transition">
-          <img src="./assets/imags for hair and logos/instagram.png" class="w-[40px] h-[40px]" alt="Instagram">
+        <a href="mailto:info@beautysalon.com" class="block text-gray-600 hover:text-[#FF69B4] transition font-semibold">
+          📧 info@beautysalon.com
         </a>
       </div>
     </div>
 
-    <!-- Contact Info -->
-    <div>
-      <h3 class="text-2xl font-bold text-[#FF69B4] mb-4 text-center md:text-left">Contact</h3>
-      <ul class="space-y-3 text-center md:text-left">
-        <li>
-          <a href="mailto:christopherolawale31@gmail.com" class="flex justify-center md:justify-start items-center gap-2 hover:text-[#FFD1DC]">
-            📧 <span>yourbusiness@gmail.com</span>
-          </a>
-        </li>
-        <li>
-          <a href="tel:+2348012345678" class="flex justify-center md:justify-start items-center gap-2 hover:text-[#FFD1DC]">
-            📞 <span>+234 801 234 5678</span>
-          </a>
-        </li>
-        <li>
-          <a href="https://maps.google.com/?q=Your+Business+Address" target="_blank" class="flex justify-center md:justify-start items-center gap-2 hover:text-[#FFD1DC]">
-            📍 <span>123 Beauty Street, Lagos</span>
-          </a>
-        </li>
-      </ul>
+  </div>
+
+  <!-- Interactive Map -->
+  <div class="geographical-coordinates-visualization w-full h-[400px] md:h-[550px] lg:h-[650px] mb-8" id="mapVisualizationContainer">
+    <iframe 
+      src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d126610.68535848249!2d3.80299294335938!3d7.4004297000000125!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x10399387d2822f11%3A0xe6387852608cf4ac!2sDREAD-IT%20Unisex%20Salon!5e0!3m2!1sen!2sng!4v1758453204745!5m2!1sen!2sng"  
+      width="100%" 
+      height="100%" 
+      style="border:0; border-radius: 1.5rem;" 
+      allowfullscreen="" 
+      loading="lazy" 
+      referrerpolicy="no-referrer-when-downgrade"
+      title="DREAD-IT Unisex Salon Location">
+    </iframe>
+  </div>
+
+  <!-- Action Buttons -->
+  <div class="flex flex-col sm:flex-row gap-4 justify-center items-center">
+    <a 
+      href="https://www.google.com/maps/dir//DREAD-IT+Unisex+Salon/@7.4004297,3.80299294335938,12z" 
+      target="_blank"
+      class="navigation-initiation-mechanism">
+      <svg class="relative z-10 w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 20l-5.447-2.724A1 1 0 013 16.382V5.618a1 1 0 011.447-.894L9 7m0 13l6-3m-6 3V7m6 10l4.553 2.276A1 1 0 0021 18.382V7.618a1 1 0 00-.553-.894L15 4m0 13V4m0 0L9 7"></path>
+      </svg>
+      <span class="relative z-10">Get Directions</span>
+    </a>
+
+    <a 
+      href="http://wa.me/2348134260378?text=Hi! I'd like to book an appointment" 
+      target="_blank"
+      class="rapid-access-trigger">
+      <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
+        <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/>
+      </svg>
+      Book Appointment
+    </a>
+
+    <a 
+      href="tel:+2348134260378"
+      class="rapid-access-trigger">
+      <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"></path>
+      </svg>
+      Call Now
+    </a>
+  </div>
+
+  <!-- Additional Info Banner -->
+  <div class="mt-12 bg-gradient-to-r from-[#800080] to-[#a020f0] rounded-2xl p-8 text-white text-center shadow-2xl">
+    <div class="flex flex-col md:flex-row items-center justify-center gap-8">
+      <div class="flex items-center gap-4">
+        <svg class="w-12 h-12 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z"></path>
+        </svg>
+        <div class="text-left">
+          <p class="text-2xl font-bold">Walk-ins Welcome!</p>
+          <p class="text-sm text-white/90">No appointment? No problem!</p>
+        </div>
+      </div>
+      <div class="hidden md:block w-px h-16 bg-white/30"></div>
+      <div class="flex items-center gap-4">
+        <svg class="w-12 h-12 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4m0 4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+        </svg>
+        <div class="text-left">
+          <p class="text-2xl font-bold">Free Parking</p>
+          <p class="text-sm text-white/90">Convenient parking available</p>
+        </div>
+      </div>
     </div>
   </div>
 
-  <!-- Copyright -->
-  <div class="border-t border-gray-700 mt-12 pt-6 text-center text-sm">
-    © 2025 Salon Website. All Rights Reserved.
+</section>
+
+
+
+
+<section class="px-4 sm:px-6 lg:px-8 py-16 md:py-20 max-w-7xl mx-auto">
+  
+  <!-- Section Header -->
+  <div class="text-center mb-16">
+    <p class="text-[#FF69B4] text-sm font-semibold tracking-widest uppercase mb-3">Let's Connect</p>
+    <h2 class="typography-serif-elegant text-4xl md:text-5xl lg:text-6xl iridescent-typography-sequence font-bold mb-4">
+      Get In Touch
+    </h2>
+    <div class="divider-line"></div>
+    <p class="text-gray-600 mt-4 max-w-2xl mx-auto text-base md:text-lg">
+      Have a question or want to book an appointment? Fill out the form below and we'll get back to you via WhatsApp!
+    </p>
   </div>
-</footer>
+
+  <!-- Quick Contact Cards -->
+  <div class="grid grid-cols-1 md:grid-cols-3 gap-6 mb-12 max-w-5xl mx-auto">
+    <a href="tel:+2348134260378" class="rapid-communication-card group">
+      <div class="flex items-center gap-4">
+        <div class="bg-gradient-to-br from-[#FF69B4] to-[#FF1493] p-3 rounded-full icon-animated-pulse">
+          <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"></path>
+          </svg>
+        </div>
+        <div>
+          <p class="text-xs text-gray-500 font-semibold uppercase">Call Us</p>
+          <p class="text-[#800080] font-bold group-hover:text-[#FF69B4] transition">+234 813 426 0378</p>
+        </div>
+      </div>
+    </a>
+
+    <a href="http://wa.me/2348134260378" class="rapid-communication-card group">
+      <div class="flex items-center gap-4">
+        <div class="bg-gradient-to-br from-[#25D366] to-[#128C7E] p-3 rounded-full icon-animated-pulse" style="animation-delay: 0.5s;">
+          <svg class="w-6 h-6 text-white" fill="currentColor" viewBox="0 0 24 24">
+            <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/>
+          </svg>
+        </div>
+        <div>
+          <p class="text-xs text-gray-500 font-semibold uppercase">WhatsApp</p>
+          <p class="text-[#25D366] font-bold group-hover:text-[#128C7E] transition">Chat Now</p>
+        </div>
+      </div>
+    </a>
+
+    <a href="mailto:info@beautysalon.com" class="rapid-communication-card group">
+      <div class="flex items-center gap-4">
+        <div class="bg-gradient-to-br from-[#FF69B4] to-[#FF1493] p-3 rounded-full icon-animated-pulse" style="animation-delay: 1s;">
+          <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"></path>
+          </svg>
+        </div>
+        <div>
+          <p class="text-xs text-gray-500 font-semibold uppercase">Email</p>
+          <p class="text-[#800080] font-bold group-hover:text-[#FF69B4] transition">info@salon.com</p>
+        </div>
+      </div>
+    </a>
+  </div>
+
+  <!-- Enhanced Form -->
+  <div class="correspondence-interface-container max-w-4xl mx-auto">
+    <div class="bg-white rounded-3xl shadow-2xl p-8 md:p-12 border-2 border-pink-100">
+      <form id="communicationTransmissionInterface">
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+          
+          <!-- Name Field -->
+          <div class="input-wrapper-enhanced">
+            <input 
+              id="clientIdentifierDesignation" 
+              type="text" 
+              placeholder=" " 
+              required
+              class="data-acquisition-field w-full rounded-xl py-4 px-5 text-base font-medium"
+            >
+            <label class="floating-designation-label">Full Name *</label>
+            <svg class="validation-indicator-symbol text-green-500" fill="currentColor" viewBox="0 0 20 20">
+              <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path>
+            </svg>
+          </div>
+
+          <!-- Email Field -->
+          <div class="input-wrapper-enhanced">
+            <input 
+              id="electronicMailIdentifier" 
+              type="email" 
+              placeholder=" " 
+              required
+              class="data-acquisition-field w-full rounded-xl py-4 px-5 text-base font-medium"
+            >
+            <label class="floating-designation-label">Email Address *</label>
+            <svg class="validation-indicator-symbol text-green-500" fill="currentColor" viewBox="0 0 20 20">
+              <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path>
+            </svg>
+          </div>
+
+          <!-- Phone Field -->
+          <div class="input-wrapper-enhanced">
+            <input 
+              id="telecommunicationIdentifier" 
+              type="tel" 
+              placeholder=" " 
+              required
+              class="data-acquisition-field w-full rounded-xl py-4 px-5 text-base font-medium"
+            >
+            <label class="floating-designation-label">Phone Number *</label>
+            <svg class="validation-indicator-symbol text-green-500" fill="currentColor" viewBox="0 0 20 20">
+              <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path>
+            </svg>
+          </div>
+
+          <!-- Subject Field -->
+          <div class="input-wrapper-enhanced">
+            <input 
+              id="communicationSubjectLine" 
+              type="text" 
+              placeholder=" "
+              class="data-acquisition-field w-full rounded-xl py-4 px-5 text-base font-medium"
+            >
+            <label class="floating-designation-label">Subject</label>
+            <svg class="validation-indicator-symbol text-green-500" fill="currentColor" viewBox="0 0 20 20">
+              <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path>
+            </svg>
+          </div>
+
+          <!-- Message Field (Full Width) -->
+          <div class="md:col-span-2 input-wrapper-enhanced">
+            <textarea 
+              id="messageContentPayload" 
+              placeholder=" " 
+              required
+              rows="6"
+              maxlength="500"
+              class="data-acquisition-field w-full rounded-xl py-4 px-5 text-base font-medium resize-none"
+            ></textarea>
+            <label class="floating-designation-label">Your Message *</label>
+            <span class="character-enumeration-display">
+              <span id="characterCountDisplay">0</span>/500
+            </span>
+            <svg class="validation-indicator-symbol text-green-500" style="top: 2rem;" fill="currentColor" viewBox="0 0 20 20">
+              <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path>
+            </svg>
+          </div>
+
+        </div>
+
+        <!-- Submit Button -->
+        <div class="flex flex-col sm:flex-row justify-between items-center gap-4 mt-8">
+          <p class="text-sm text-gray-500">
+            <span class="text-red-500">*</span> Required fields
+          </p>
+          <button 
+            type="submit" 
+            id="messageTransmissionTrigger"
+            class="submission-dispatch-trigger text-white py-4 px-10 rounded-full font-bold text-lg flex items-center gap-3 group w-full sm:w-auto justify-center"
+          >
+            <span class="relative z-10">Send via WhatsApp</span>
+            <svg class="relative z-10 w-6 h-6 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"></path>
+            </svg>
+          </button>
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <!-- Success Notification (Hidden by default) -->
+  <div id="successNotificationPanel" class="transmission-confirmation-display">
+    <div class="flex items-start gap-4">
+      <svg class="w-8 h-8 flex-shrink-0 mt-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+      </svg>
+      <div>
+        <p class="font-bold text-lg mb-1">Message Sent Successfully!</p>
+        <p class="text-sm text-white/90">Redirecting you to WhatsApp...</p>
+      </div>
+    </div>
+  </div>
+
+</section>
 
 
-<script src="./script.js"></script>
-<script>
-  document.getElementById("sendBtn").addEventListener("click", function () {
-    let name = document.getElementById("name").value.trim();
-    let email = document.getElementById("email").value.trim();
-    let phone = document.getElementById("phone").value.trim();
-    let subject = document.getElementById("subject").value.trim();
-    let message = document.getElementById("message").value.trim();
-
-    if (!name || !email || !phone || !subject || !message) {
-      alert("⚠️ Please fill out all fields before submitting.");
-    } else {
-      let whatsappNumber = "2348134260378"; // replace with your WhatsApp number
-      let url = `https://wa.me/${whatsappNumber}?text=
-        *New Contact Message*%0A
-        👤 Name: ${name}%0A
-        📧 Email: ${email}%0A
-        📞 Phone: ${phone}%0A
-        📝 Subject: ${subject}%0A
-        💬 Message: ${message}`;
-
-      window.open(url, "_blank"); 
-      document.getElementById("contactForm").reset();
-    }
-  });
 
 
-  const cards = document.querySelectorAll(".info-card");
 
-  cards.forEach(card => {
-    // Add hover animation
-    card.addEventListener("mouseenter", () => {
-      card.style.transform = "translateY(-8px)";
-      card.style.boxShadow = "0 10px 20px rgba(128,0,128,0.3)";
-      card.style.transition = "all 0.3s ease";
-    });
+<footer class="beauty-footer-wrapper relative">
+    
+    <!-- Background Pattern -->
+    <div class="beauty-footer-bg-pattern"></div>
+    
+    <!-- Decorative Ornaments -->
+    <div class="beauty-footer-ornament beauty-footer-ornament-1"></div>
+    <div class="beauty-footer-ornament beauty-footer-ornament-2"></div>
 
-    card.addEventListener("mouseleave", () => {
-      card.style.transform = "translateY(0)";
-      card.style.boxShadow = "0 4px 6px rgba(0,0,0,0.1)";
-    });
-  });
-</script>
+    <div class="relative z-10 px-6 py-12 md:py-16">
+      
+      <!-- Newsletter Section -->
+      <div class="max-w-4xl mx-auto beauty-footer-newsletter">
+        <div class="text-center mb-6">
+          <h3 class="text-2xl md:text-3xl font-bold beauty-footer-title-gradient mb-2">
+            Stay Updated
+          </h3>
+          <p class="text-gray-300 text-sm md:text-base">
+            Subscribe to get exclusive beauty tips and special offers
+          </p>
+        </div>
+        <form class="flex flex-col sm:flex-row gap-3 max-w-xl mx-auto">
+          <input 
+            type="email" 
+            placeholder="Enter your email address" 
+            class="beauty-footer-newsletter-input flex-1"
+            required>
+          <button type="submit" class="beauty-footer-newsletter-btn">
+            Subscribe ✨
+          </button>
+        </form>
+      </div>
+
+      <!-- Main Footer Content -->
+      <div class="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12">
+        
+        <!-- Logo & About Section -->
+        <div class="beauty-footer-section text-center md:text-left">
+          <div class="beauty-footer-logo-frame mb-6 mx-auto md:mx-0">
+            <img src="./assets/imags for hair and logos/Premium_Vector___Scissors_and_comb_stylist_silhouette_Design_for_a_beauty_salon-removebg-preview.png" 
+                 alt="Beauty Studio Logo"
+                 class="w-[100px] h-[100px]">
+          </div>
+          <h3 class="text-xl font-bold text-white mb-3">Beauty Studio</h3>
+          <p class="text-gray-300 text-sm leading-relaxed">
+            Welcome to our salon, where beauty meets professionalism. 
+            We specialize in <span class="text-pink-400 font-semibold">makeup, nails, and hair</span> — 
+            ensuring you always leave glowing with confidence.
+          </p>
+        </div>
+
+        <!-- Quick Links Section -->
+        <div class="beauty-footer-section">
+          <h3 class="text-2xl font-bold beauty-footer-title-gradient mb-6 text-center md:text-left">
+            Quick Links
+          </h3>
+          <ul class="space-y-3 text-gray-300 text-sm">
+            <li><a href="./homepage.html" class="beauty-footer-link-item block">Home</a></li>
+            <li><a href="./about.html" class="beauty-footer-link-item block">About Us</a></li>
+            <li><a href="./service.html" class="beauty-footer-link-item block">Services</a></li>
+            <li><a href="./gallery.html" class="beauty-footer-link-item block">Gallery</a></li>
+            <li><a href="./service.html#faq" class="beauty-footer-link-item block">FAQ</a></li>
+            <li><a href="./about.html#team" class="beauty-footer-link-item block">Our Team</a></li>
+            <li><a href="./homepage.html" class="beauty-footer-link-item block">Pricing</a></li>
+            <li><a href="./contact.html" class="beauty-footer-link-item block">Contact</a></li>
+            <li><a href="./contact.html#location" class="beauty-footer-link-item block">Location</a></li>
+          </ul>
+        </div>
+
+        <!-- Social Media Section -->
+        <div class="beauty-footer-section">
+          <h3 class="text-2xl font-bold beauty-footer-title-gradient mb-6 text-center md:text-left">
+            Follow Us
+          </h3>
+          <p class="text-gray-300 text-sm mb-6 text-center md:text-left">
+            Join our community and stay connected
+          </p>
+          <div class="flex justify-center md:justify-start gap-4">
+            <a href="http://wa.me/2348134260378" 
+               class="beauty-footer-social-icon"
+               aria-label="WhatsApp">
+              <img src="./assets/imags for hair and logos/whatsapp.png" 
+                   class="w-[28px] h-[28px]" 
+                   alt="WhatsApp">
+            </a>
+            <a href="https://www.facebook.com/share/19fTZcdPKN/?mibextid=wwXIfr" 
+               class="beauty-footer-social-icon"
+               aria-label="Facebook">
+              <img src="./assets/imags for hair and logos/facebook.png" 
+                   class="w-[28px] h-[28px]" 
+                   alt="Facebook">
+            </a>
+            <a href="https://www.instagram.com/milimoon12/" 
+               class="beauty-footer-social-icon"
+               aria-label="Instagram">
+              <img src="./assets/imags for hair and logos/instagram.png" 
+                   class="w-[28px] h-[28px]" 
+                   alt="Instagram">
+            </a>
+          </div>
+        </div>
+
+        <!-- Contact Info Section -->
+        <div class="beauty-footer-section">
+          <h3 class="text-2xl font-bold beauty-footer-title-gradient mb-6 text-center md:text-left">
+            Get In Touch
+          </h3>
+          <ul class="space-y-3">
+            <li>
+              <a href="mailto:yourbusiness@gmail.com" class="beauty-footer-contact-item">
+                <span class="beauty-footer-contact-icon">📧</span>
+                <span class="text-gray-300 text-sm">yourbusiness@gmail.com</span>
+              </a>
+            </li>
+            <li>
+              <a href="tel:+2348012345678" class="beauty-footer-contact-item">
+                <span class="beauty-footer-contact-icon">📞</span>
+                <span class="text-gray-300 text-sm">+234 801 234 5678</span>
+              </a>
+            </li>
+            <li>
+              <a href="https://maps.google.com/?q=123+Beauty+Street+Lagos" 
+                 target="_blank" 
+                 class="beauty-footer-contact-item">
+                <span class="beauty-footer-contact-icon">📍</span>
+                <span class="text-gray-300 text-sm">123 Beauty Street, Lagos</span>
+              </a>
+            </li>
+          </ul>
+        </div>
+
+      </div>
+
+      <!-- Decorative Divider -->
+      <div class="beauty-footer-divider max-w-7xl mx-auto"></div>
+
+      <!-- Copyright Section -->
+      <div class="beauty-footer-copyright">
+        <div class="max-w-7xl mx-auto text-center">
+          <p class="text-gray-300 text-sm mb-2">
+            © 2025 <span class="text-pink-400 font-semibold">Beauty Studio</span>. All Rights Reserved.
+          </p>
+          <p class="text-gray-400 text-xs">
+            Crafted with <span class="beauty-footer-heart">♥</span> for Beautiful People
+          </p>
+          <div class="flex flex-wrap justify-center gap-4 mt-4 text-xs text-gray-400">
+            <a href="#" class="hover:text-pink-400 transition">Privacy Policy</a>
+            <span>•</span>
+            <a href="#" class="hover:text-pink-400 transition">Terms of Service</a>
+            <span>•</span>
+            <a href="#" class="hover:text-pink-400 transition">Cookie Policy</a>
+          </div>
+        </div>
+      </div>
+
+    </div>
+
+    <!-- Back to Top Button -->
+    <button class="beauty-footer-back-to-top" id="beautyBackToTop" aria-label="Back to top">
+      <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M5 10l7-7m0 0l7 7m-7-7v18"></path>
+      </svg>
+    </button>
+
+  </footer>
+
+
+
+<script src="./contact.js"></script>
 </body>
 </html>

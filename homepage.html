@@ -9,16 +9,10 @@
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
   <link rel="icon" type="image/png" href="./assets/images for nails/hair.png">
    <script src="https://cdn.tailwindcss.com"></script>
-<link rel="stylesheet" href="./style.css">
-  <!-- Hot Pink – #FF69B4 (attention grabber)
-
-Light Pink – #FFD1DC (soft sections)
-
-Deep Purple – #800080 (royal luxury touch)
-
-White – #FFFFFF (clean background)
-
-Gold Accent – #F4C430 (premium feel) -->
+<link rel="stylesheet" href="./homepage.css">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 </head>
 <body class="bg-gradient-to-br from-purple-50 via-pink-50 to-white min-h-screen">
 <!-- Navigation -->
@@ -27,13 +21,10 @@ Gold Accent – #F4C430 (premium feel) -->
       <div class="flex items-center justify-between h-20 lg:h-24">
         
         <!-- Logo -->
-        <a href="./index.html" class="logo-container flex items-center space-x-3 z-50">
+        <a href="./homepage.html" class="logo-container flex items-center space-x-3 z-50">
           <div class="w-16 h-16 lg:w-20 lg:h-20 bg-white rounded-full shadow-lg flex items-center justify-center">
-            <svg class="w-10 h-10 lg:w-12 lg:h-12" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
-              <path d="M30 20 L50 70 L70 20" stroke="#800080" stroke-width="4" stroke-linecap="round"/>
-              <circle cx="50" cy="75" r="5" fill="#FF69B4"/>
-              <path d="M20 35 Q50 45 80 35" stroke="#F4C430" stroke-width="3" stroke-linecap="round"/>
-            </svg>
+            <img src="./assets/imags for hair and logos/Premium_Vector___Scissors_and_comb_stylist_silhouette_Design_for_a_beauty_salon-removebg-preview.png"
+             alt="Beauty Studio Logo">
           </div>
           <span class="hidden sm:block text-xl lg:text-2xl font-bold bg-gradient-to-r from-purple-600 to-pink-500 bg-clip-text text-transparent">
             Luxury Salon
@@ -42,7 +33,7 @@ Gold Accent – #F4C430 (premium feel) -->
 
         <!-- Desktop Navigation -->
         <nav class="hidden lg:flex items-center space-x-1 xl:space-x-2">
-          <a href="./index.html" class="nav-link px-4 xl:px-6 py-2 text-white font-medium text-base xl:text-lg hover:text-pink-200 transition-colors">
+          <a href="./homepage.html" class="nav-link px-4 xl:px-6 py-2 text-white font-medium text-base xl:text-lg hover:text-pink-200 transition-colors">
             Home
           </a>
           <a href="./about.html" class="nav-link px-4 xl:px-6 py-2 text-white font-medium text-base xl:text-lg hover:text-pink-200 transition-colors">
@@ -83,7 +74,7 @@ Gold Accent – #F4C430 (premium feel) -->
       
       <!-- Mobile Menu Links -->
       <nav class="flex-1 space-y-2">
-        <a href="./index.html" class="mobile-menu-link mobile-menu-item block px-6 py-4 text-white font-semibold text-lg hover:bg-white/10 rounded-xl transition-all duration-300">
+        <a href="./homepage.html" class="mobile-menu-link mobile-menu-item block px-6 py-4 text-white font-semibold text-lg hover:bg-white/10 rounded-xl transition-all duration-300">
           Home
         </a>
         <a href="./about.html" class="mobile-menu-link mobile-menu-item block px-6 py-4 text-white font-semibold text-lg hover:bg-white/10 rounded-xl transition-all duration-300">
@@ -816,7 +807,7 @@ Gold Accent – #F4C430 (premium feel) -->
             </svg>
           </a>
           
-          <a href="#pricing"
+          <a href="./service.html"
              class="inline-flex items-center gap-2 bg-white/80 backdrop-blur-sm text-[#800080] font-semibold py-4 px-8 rounded-full hover:bg-white hover:shadow-xl transition-all duration-300 hover:scale-105">
             <span>View Services</span>
             <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -1207,7 +1198,7 @@ Gold Accent – #F4C430 (premium feel) -->
             </div>
             <div>
               <p class="text-gray-500 text-sm font-semibold">Email Us</p>
-              <a href="mailto:info@beautysalon.com" class="text-[#800080] font-bold text-lg hover:text-[#FF69B4] transition">info@beautysalon.com</a>
+              <a href="mailto:christopherolawale31@gmail.com" class="text-[#800080] font-bold text-lg hover:text-[#FF69B4] transition">info@beautysalon.com</a>
             </div>
           </div>
         </div>
@@ -1226,80 +1217,171 @@ Gold Accent – #F4C430 (premium feel) -->
 
 </section>
 
-<footer class="w-full bg-black text-white px-6 py-12 mt-12">
-  <div class="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-4 gap-12">
+<footer class="beauty-footer-wrapper relative">
     
-    <!-- Logo & About -->
-    <div class="space-y-4 text-center md:text-left">
-      <img src="./assets/imags for hair and logos/Premium_Vector___Scissors_and_comb_stylist_silhouette_Design_for_a_beauty_salon-removebg-preview.png" 
-           alt="Salon Logo"
-           class="w-[100px] h-[100px] mx-auto md:mx-0 bg-[#800080] rounded">
-      <p class="text-sm leading-relaxed">
-        Welcome to our salon, where beauty meets professionalism.  
-        We specialize in <span class="text-[#FF69B4] font-semibold">makeup, nails, and hair</span> — ensuring you always leave glowing with confidence.
-      </p>
-    </div>
+    <!-- Background Pattern -->
+    <div class="beauty-footer-bg-pattern"></div>
+    
+    <!-- Decorative Ornaments -->
+    <div class="beauty-footer-ornament beauty-footer-ornament-1"></div>
+    <div class="beauty-footer-ornament beauty-footer-ornament-2"></div>
 
-    <!-- Quick Links -->
-    <div>
-      <h3 class="text-2xl font-bold text-[#FF69B4] mb-4 text-center md:text-left">Quick Links</h3>
-      <ul class="space-y-2 text-center md:text-left">
-        <li><a href="./index.html" class="hover:text-[#FFD1DC] transition">Home</a></li>
-        <li><a href="./about.html" class="hover:text-[#FFD1DC] transition">About Us</a></li>
-        <li><a href="./service.html#faq" class="hover:text-[#FFD1DC] transition">FAQ</a></li>
-        <li><a href="./contact.html" class="hover:text-[#FFD1DC] transition">Contact</a></li>
-        <li><a href="./contact.html#location" class="hover:text-[#FFD1DC] transition">Location</a></li>
-        <li><a href="./service.html" class="hover:text-[#FFD1DC] transition">Services</a></li>
-        <li><a href="./gallery.html" class="hover:text-[#FFD1DC] transition">Gallery</a></li>
-        <li><a href="./about.html#team" class="hover:text-[#FFD1DC] transition">Our Team</a></li>
-        <li><a href="./index.html#pricing" class="hover:text-[#FFD1DC] transition">Pricing</a></li>
-      </ul>
-    </div>
-
-    <!-- Social Media -->
-    <div>
-      <h3 class="text-2xl font-bold text-[#FF69B4] mb-4 text-center md:text-left">Follow Us</h3>
-      <div class="flex justify-center md:justify-start gap-5">
-        <a href="http://wa.me/2348134260378" class="hover:scale-110 transition">
-          <img src="./assets/imags for hair and logos/whatsapp.png" class="w-[40px] h-[40px]" alt="WhatsApp">
-        </a>
-        <a href="https://www.facebook.com/share/19fTZcdPKN/?mibextid=wwXIfr" class="hover:scale-110 transition">
-          <img src="./assets/imags for hair and logos/facebook.png" class="w-[40px] h-[40px]" alt="Facebook">
-        </a>
-        <a href="https://www.instagram.com/milimoon12/" class="hover:scale-110 transition">
-          <img src="./assets/imags for hair and logos/instagram.png" class="w-[40px] h-[40px]" alt="Instagram">
-        </a>
+    <div class="relative z-10 px-6 py-12 md:py-16">
+      
+      <!-- Newsletter Section -->
+      <div class="max-w-4xl mx-auto beauty-footer-newsletter">
+        <div class="text-center mb-6">
+          <h3 class="text-2xl md:text-3xl font-bold beauty-footer-title-gradient mb-2">
+            Stay Updated
+          </h3>
+          <p class="text-gray-300 text-sm md:text-base">
+            Subscribe to get exclusive beauty tips and special offers
+          </p>
+        </div>
+        <form class="flex flex-col sm:flex-row gap-3 max-w-xl mx-auto">
+          <input 
+            type="email" 
+            placeholder="Enter your email address" 
+            class="beauty-footer-newsletter-input flex-1"
+            required>
+          <button type="submit" class="beauty-footer-newsletter-btn">
+            Subscribe ✨
+          </button>
+        </form>
       </div>
+
+      <!-- Main Footer Content -->
+      <div class="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12">
+        
+        <!-- Logo & About Section -->
+        <div class="beauty-footer-section text-center md:text-left">
+          <div class="beauty-footer-logo-frame mb-6 mx-auto md:mx-0">
+            <img src="./assets/imags for hair and logos/Premium_Vector___Scissors_and_comb_stylist_silhouette_Design_for_a_beauty_salon-removebg-preview.png" 
+                 alt="Beauty Studio Logo"
+                 class="w-[100px] h-[100px]">
+          </div>
+          <h3 class="text-xl font-bold text-white mb-3">Beauty Studio</h3>
+          <p class="text-gray-300 text-sm leading-relaxed">
+            Welcome to our salon, where beauty meets professionalism. 
+            We specialize in <span class="text-pink-400 font-semibold">makeup, nails, and hair</span> — 
+            ensuring you always leave glowing with confidence.
+          </p>
+        </div>
+
+        <!-- Quick Links Section -->
+        <div class="beauty-footer-section">
+          <h3 class="text-2xl font-bold beauty-footer-title-gradient mb-6 text-center md:text-left">
+            Quick Links
+          </h3>
+          <ul class="space-y-3 text-gray-300 text-sm">
+            <li><a href="./homepage.html" class="beauty-footer-link-item block">Home</a></li>
+            <li><a href="./about.html" class="beauty-footer-link-item block">About Us</a></li>
+            <li><a href="./service.html" class="beauty-footer-link-item block">Services</a></li>
+            <li><a href="./gallery.html" class="beauty-footer-link-item block">Gallery</a></li>
+            <li><a href="./service.html#faq" class="beauty-footer-link-item block">FAQ</a></li>
+            <li><a href="./about.html#team" class="beauty-footer-link-item block">Our Team</a></li>
+            <li><a href="./homepage.html" class="beauty-footer-link-item block">Pricing</a></li>
+            <li><a href="./contact.html" class="beauty-footer-link-item block">Contact</a></li>
+            <li><a href="./contact.html#location" class="beauty-footer-link-item block">Location</a></li>
+          </ul>
+        </div>
+
+        <!-- Social Media Section -->
+        <div class="beauty-footer-section">
+          <h3 class="text-2xl font-bold beauty-footer-title-gradient mb-6 text-center md:text-left">
+            Follow Us
+          </h3>
+          <p class="text-gray-300 text-sm mb-6 text-center md:text-left">
+            Join our community and stay connected
+          </p>
+          <div class="flex justify-center md:justify-start gap-4">
+            <a href="http://wa.me/2348134260378" 
+               class="beauty-footer-social-icon"
+               aria-label="WhatsApp">
+              <img src="./assets/imags for hair and logos/whatsapp.png" 
+                   class="w-[28px] h-[28px]" 
+                   alt="WhatsApp">
+            </a>
+            <a href="https://www.facebook.com/share/19fTZcdPKN/?mibextid=wwXIfr" 
+               class="beauty-footer-social-icon"
+               aria-label="Facebook">
+              <img src="./assets/imags for hair and logos/facebook.png" 
+                   class="w-[28px] h-[28px]" 
+                   alt="Facebook">
+            </a>
+            <a href="https://www.instagram.com/milimoon12/" 
+               class="beauty-footer-social-icon"
+               aria-label="Instagram">
+              <img src="./assets/imags for hair and logos/instagram.png" 
+                   class="w-[28px] h-[28px]" 
+                   alt="Instagram">
+            </a>
+          </div>
+        </div>
+
+        <!-- Contact Info Section -->
+        <div class="beauty-footer-section">
+          <h3 class="text-2xl font-bold beauty-footer-title-gradient mb-6 text-center md:text-left">
+            Get In Touch
+          </h3>
+          <ul class="space-y-3">
+            <li>
+              <a href="mailto:yourbusiness@gmail.com" class="beauty-footer-contact-item">
+                <span class="beauty-footer-contact-icon">📧</span>
+                <span class="text-gray-300 text-sm">yourbusiness@gmail.com</span>
+              </a>
+            </li>
+            <li>
+              <a href="tel:+2348012345678" class="beauty-footer-contact-item">
+                <span class="beauty-footer-contact-icon">📞</span>
+                <span class="text-gray-300 text-sm">+234 801 234 5678</span>
+              </a>
+            </li>
+            <li>
+              <a href="https://maps.google.com/?q=123+Beauty+Street+Lagos" 
+                 target="_blank" 
+                 class="beauty-footer-contact-item">
+                <span class="beauty-footer-contact-icon">📍</span>
+                <span class="text-gray-300 text-sm">Ibadan Nigeria</span>
+              </a>
+            </li>
+          </ul>
+        </div>
+
+      </div>
+
+      <!-- Decorative Divider -->
+      <div class="beauty-footer-divider max-w-7xl mx-auto"></div>
+
+      <!-- Copyright Section -->
+      <div class="beauty-footer-copyright">
+        <div class="max-w-7xl mx-auto text-center">
+          <p class="text-gray-300 text-sm mb-2">
+            © 2025 <span class="text-pink-400 font-semibold">Beauty Studio</span>. All Rights Reserved.
+          </p>
+          <p class="text-gray-400 text-xs">
+            Crafted with <span class="beauty-footer-heart">♥</span> for Beautiful People
+          </p>
+          <div class="flex flex-wrap justify-center gap-4 mt-4 text-xs text-gray-400">
+            <a href="#" class="hover:text-pink-400 transition">Privacy Policy</a>
+            <span>•</span>
+            <a href="#" class="hover:text-pink-400 transition">Terms of Service</a>
+            <span>•</span>
+            <a href="#" class="hover:text-pink-400 transition">Cookie Policy</a>
+          </div>
+        </div>
+      </div>
+
     </div>
 
-    <!-- Contact Info -->
-    <div>
-      <h3 class="text-2xl font-bold text-[#FF69B4] mb-4 text-center md:text-left">Contact</h3>
-      <ul class="space-y-3 text-center md:text-left">
-        <li>
-          <a href="mailto:christopherolawale31@gmail.com" class="flex justify-center md:justify-start items-center gap-2 hover:text-[#FFD1DC]">
-            📧 <span>yourbusiness@gmail.com</span>
-          </a>
-        </li>
-        <li>
-          <a href="tel:+2348012345678" class="flex justify-center md:justify-start items-center gap-2 hover:text-[#FFD1DC]">
-            📞 <span>+234 801 234 5678</span>
-          </a>
-        </li>
-        <li>
-          <a href="https://maps.google.com/?q=Your+Business+Address" target="_blank" class="flex justify-center md:justify-start items-center gap-2 hover:text-[#FFD1DC]">
-            📍 <span>123 Beauty Street, Lagos</span>
-          </a>
-        </li>
-      </ul>
-    </div>
-  </div>
+    <!-- Back to Top Button -->
+    <button class="beauty-footer-back-to-top" id="beautyBackToTop" aria-label="Back to top">
+      <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M5 10l7-7m0 0l7 7m-7-7v18"></path>
+      </svg>
+    </button>
 
-  <!-- Copyright -->
-  <div class="border-t border-gray-700 mt-12 pt-6 text-center text-sm">
-    © 2025 Salon Website. All Rights Reserved.
-  </div>
-</footer>
+  </footer>
 
 
 
