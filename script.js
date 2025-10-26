@@ -111,54 +111,50 @@ document.addEventListener("DOMContentLoaded", function() {
   const prevBtn = document.getElementById("prev-slide");
   const nextBtn = document.getElementById("next-slide");
 
-  // Animate hero content
+  // Detect if mobile device
+  const isMobile = /iPhone|iPad|iPod|Android/i.test(navigator.userAgent) || window.innerWidth < 768;
+
+  // Animate hero content - OPTIMIZED FOR MOBILE
   function animateHero(direction = 'next') {
     if (isAnimating) return;
     isAnimating = true;
 
-    // Determine animation direction
-    const slideOutX = direction === 'next' ? '-100%' : '100%';
-    const slideInX = direction === 'next' ? '100%' : '-100%';
+    // Simpler animations for mobile
+    const duration = isMobile ? 500 : 600;
+    const easing = 'ease-out';
 
     // Fade out current content
-    img.style.transition = "all 0.6s cubic-bezier(0.4, 0, 0.2, 1)";
-    text.style.transition = "all 0.6s cubic-bezier(0.4, 0, 0.2, 1)";
+    img.style.transition = `opacity ${duration}ms ${easing}`;
+    text.style.transition = `opacity ${duration}ms ${easing}, transform ${duration}ms ${easing}`;
     
-    img.style.transform = `translateX(${slideOutX})`;
     img.style.opacity = "0";
-    text.style.transform = `translateX(${slideOutX})`;
     text.style.opacity = "0";
+    text.style.transform = "translateY(20px)";
 
     // Update content after fade out
     setTimeout(() => {
       img.src = images[currentIndex];
       text.textContent = words[currentIndex];
       
-      // Reset position for slide in
-      img.style.transition = "none";
-      text.style.transition = "none";
-      img.style.transform = `translateX(${slideInX})`;
-      text.style.transform = `translateX(${slideInX})`;
+      // Reset position
+      text.style.transform = "translateY(-20px)";
 
-      // Trigger slide in animation
-      setTimeout(() => {
-        img.style.transition = "all 0.8s cubic-bezier(0.34, 1.56, 0.64, 1)";
-        text.style.transition = "all 0.8s cubic-bezier(0.34, 1.56, 0.64, 1)";
-        img.style.transform = "translateX(0) scale(1)";
-        img.style.opacity = "1";
-        text.style.transform = "translateX(0)";
-        text.style.opacity = "1";
-        
-        // Add zoom animation class
-        img.classList.add('zoom-animation');
-        setTimeout(() => img.classList.remove('zoom-animation'), 1000);
-        
-        isAnimating = false;
-      }, 50);
+      // Trigger fade in animation
+      requestAnimationFrame(() => {
+        requestAnimationFrame(() => {
+          img.style.opacity = "1";
+          text.style.opacity = "1";
+          text.style.transform = "translateY(0)";
+          
+          setTimeout(() => {
+            isAnimating = false;
+          }, duration);
+        });
+      });
 
       // Update progress dots
       updateDots();
-    }, 600);
+    }, duration);
   }
 
   // Update active dot
@@ -201,12 +197,14 @@ document.addEventListener("DOMContentLoaded", function() {
   }
 
   // Event listeners for navigation
-  nextBtn.addEventListener('click', () => {
+  nextBtn.addEventListener('click', (e) => {
+    e.preventDefault();
     nextSlide();
     resetAutoplay();
   });
 
-  prevBtn.addEventListener('click', () => {
+  prevBtn.addEventListener('click', (e) => {
+    e.preventDefault();
     prevSlide();
     resetAutoplay();
   });
@@ -227,47 +225,67 @@ document.addEventListener("DOMContentLoaded", function() {
     }
   });
 
-  // Pause on hover (optional)
+  // Pause on hover (desktop only)
   const heroSection = document.querySelector('section');
-  heroSection.addEventListener('mouseenter', () => clearInterval(autoplayInterval));
-  heroSection.addEventListener('mouseleave', () => resetAutoplay());
+  if (!isMobile) {
+    heroSection.addEventListener('mouseenter', () => clearInterval(autoplayInterval));
+    heroSection.addEventListener('mouseleave', () => resetAutoplay());
+  }
 
-  // Touch swipe support
+  // IMPROVED Touch swipe support
   let touchStartX = 0;
   let touchEndX = 0;
+  let touchStartY = 0;
+  let touchEndY = 0;
 
   heroSection.addEventListener('touchstart', (e) => {
     touchStartX = e.changedTouches[0].screenX;
-  });
+    touchStartY = e.changedTouches[0].screenY;
+  }, { passive: true });
 
   heroSection.addEventListener('touchend', (e) => {
     touchEndX = e.changedTouches[0].screenX;
+    touchEndY = e.changedTouches[0].screenY;
     handleSwipe();
-  });
+  }, { passive: true });
 
   function handleSwipe() {
-    if (touchEndX < touchStartX - 50) {
-      nextSlide();
-      resetAutoplay();
-    }
-    if (touchEndX > touchStartX + 50) {
-      prevSlide();
-      resetAutoplay();
+    const xDiff = touchStartX - touchEndX;
+    const yDiff = Math.abs(touchStartY - touchEndY);
+    
+    // Only trigger if horizontal swipe is more significant than vertical
+    if (Math.abs(xDiff) > yDiff && Math.abs(xDiff) > 75) {
+      if (xDiff > 0) {
+        // Swipe left - next slide
+        nextSlide();
+        resetAutoplay();
+      } else {
+        // Swipe right - previous slide
+        prevSlide();
+        resetAutoplay();
+      }
     }
   }
 
-  // Initialize first slide
+  // Initialize first slide with hardware acceleration
+  img.style.willChange = 'opacity';
+  text.style.willChange = 'opacity, transform';
+  
   setTimeout(() => {
     img.style.opacity = "1";
-    img.style.transform = "translateX(0)";
     text.style.opacity = "1";
-    text.style.transform = "translateX(0)";
+    text.style.transform = "translateY(0)";
   }, 100);
 
   // Start autoplay
   autoplayInterval = setInterval(nextSlide, 5000);
-});
 
+  // Clean up will-change on animation end
+  setTimeout(() => {
+    img.style.willChange = 'auto';
+    text.style.willChange = 'auto';
+  }, 2000);
+});
 
 
 

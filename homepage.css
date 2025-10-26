@@ -180,39 +180,58 @@
     }
       /* Hero gradient overlay */
   .hero-overlay {
-    background: linear-gradient(135deg, rgba(128, 0, 128, 0.7) 0%, rgba(255, 105, 180, 0.6) 50%, rgba(244, 196, 48, 0.5) 100%);
-  }
+  background: linear-gradient(135deg, rgba(128, 0, 128, 0.7) 0%, rgba(255, 105, 180, 0.6) 50%, rgba(244, 196, 48, 0.5) 100%);
+}
 
-  /* Image fade transition */
-  .hero-image {
-    transition: all 1s cubic-bezier(0.4, 0, 0.2, 1);
-  }
+/* Image optimized for mobile */
+.hero-image {
+  transition: opacity 0.6s ease-out;
+  /* Enable hardware acceleration */
+  transform: translateZ(0);
+  backface-visibility: hidden;
+  -webkit-backface-visibility: hidden;
+}
 
-  /* Text animations */
-  .hero-text {
-    text-shadow: 2px 4px 8px rgba(0, 0, 0, 0.3);
-    transition: all 0.8s cubic-bezier(0.34, 1.56, 0.64, 1);
-  }
+/* Text animations - simplified for mobile */
+.hero-text {
+  text-shadow: 2px 4px 8px rgba(0, 0, 0, 0.3);
+  transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+  /* Enable hardware acceleration */
+  transform: translateZ(0);
+  backface-visibility: hidden;
+  -webkit-backface-visibility: hidden;
+}
 
-  /* Animated background pattern */
+/* Reduce pattern animation intensity on mobile */
+.hero-pattern {
+  background-image: 
+    radial-gradient(circle at 20% 50%, rgba(255, 105, 180, 0.1) 0%, transparent 50%),
+    radial-gradient(circle at 80% 80%, rgba(128, 0, 128, 0.1) 0%, transparent 50%);
+}
+
+/* Only animate pattern on desktop */
+@media (min-width: 768px) {
   .hero-pattern {
-    background-image: 
-      radial-gradient(circle at 20% 50%, rgba(255, 105, 180, 0.1) 0%, transparent 50%),
-      radial-gradient(circle at 80% 80%, rgba(128, 0, 128, 0.1) 0%, transparent 50%);
     animation: patternMove 20s ease-in-out infinite;
   }
+}
 
-  @keyframes patternMove {
-    0%, 100% { background-position: 0% 0%, 100% 100%; }
-    50% { background-position: 100% 100%, 0% 0%; }
-  }
+@keyframes patternMove {
+  0%, 100% { background-position: 0% 0%, 100% 100%; }
+  50% { background-position: 100% 100%, 0% 0%; }
+}
 
-  /* CTA button animations */
-  .cta-button {
-    position: relative;
-    overflow: hidden;
-  }
+/* CTA button animations */
+.cta-button {
+  position: relative;
+  overflow: hidden;
+  /* Hardware acceleration */
+  transform: translateZ(0);
+  backface-visibility: hidden;
+}
 
+/* Simplify button animation on mobile */
+@media (min-width: 768px) {
   .cta-button::before {
     content: '';
     position: absolute;
@@ -230,61 +249,85 @@
     width: 300px;
     height: 300px;
   }
+}
 
-  /* Scroll indicator */
-  .scroll-indicator {
-    animation: bounce 2s infinite;
+/* Mobile tap feedback */
+@media (max-width: 767px) {
+  .cta-button:active {
+    transform: scale(0.98);
+    transition: transform 0.1s;
   }
+}
 
-  @keyframes bounce {
-    0%, 20%, 50%, 80%, 100% { transform: translateY(0); }
-    40% { transform: translateY(-10px); }
-    60% { transform: translateY(-5px); }
-  }
+/* Scroll indicator */
+.scroll-indicator {
+  animation: bounce 2s infinite;
+}
 
-  /* Fade in animation for hero content */
-  @keyframes fadeInUp {
-    from {
-      opacity: 0;
-      transform: translateY(30px);
-    }
-    to {
-      opacity: 1;
-      transform: translateY(0);
-    }
-  }
+@keyframes bounce {
+  0%, 20%, 50%, 80%, 100% { transform: translateY(0); }
+  40% { transform: translateY(-10px); }
+  60% { transform: translateY(-5px); }
+}
 
-  .fade-in-up {
-    animation: fadeInUp 1s ease-out forwards;
-  }
-
-  /* Subtitle animation */
-  .subtitle {
-    animation: fadeInUp 1s ease-out 0.3s forwards;
+/* Fade in animation for hero content */
+@keyframes fadeInUp {
+  from {
     opacity: 0;
+    transform: translateY(30px);
   }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
 
-  /* Progress dots for slideshow */
+.fade-in-up {
+  animation: fadeInUp 1s ease-out forwards;
+  /* Hardware acceleration */
+  transform: translateZ(0);
+}
+
+/* Subtitle animation */
+.subtitle {
+  animation: fadeInUp 1s ease-out 0.3s forwards;
+  opacity: 0;
+}
+
+/* Progress dots for slideshow */
+.progress-dot {
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.5);
+  transition: all 0.3s ease;
+  cursor: pointer;
+  border: none;
+  /* Increase touch target size on mobile */
+  padding: 8px;
+  margin: 0 4px;
+}
+
+.progress-dot.active {
+  background: #F4C430;
+  transform: scale(1.3);
+}
+
+/* Better touch target on mobile */
+@media (max-width: 767px) {
   .progress-dot {
-    width: 12px;
-    height: 12px;
-    border-radius: 50%;
-    background: rgba(255, 255, 255, 0.5);
-    transition: all 0.3s ease;
-    cursor: pointer;
+    width: 10px;
+    height: 10px;
+    padding: 10px;
   }
+}
 
-  .progress-dot.active {
-    background: #F4C430;
-    transform: scale(1.3);
-  }
+.progress-dot:hover {
+  background: rgba(255, 255, 255, 0.8);
+}
 
-  .progress-dot:hover {
-    background: rgba(255, 255, 255, 0.8);
-    transform: scale(1.2);
-  }
-
-  /* Image zoom effect */
+/* Remove zoom animation on mobile for better performance */
+@media (min-width: 768px) {
   @keyframes zoomIn {
     from {
       transform: scale(1.1);
@@ -297,7 +340,32 @@
   .zoom-animation {
     animation: zoomIn 1s ease-out forwards;
   }
+}
 
+/* Prevent text selection during swipe */
+section {
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  -webkit-tap-highlight-color: transparent;
+}
+
+/* Optimize navigation buttons for mobile */
+@media (max-width: 767px) {
+  #prev-slide,
+  #next-slide {
+    width: 40px;
+    height: 40px;
+    background: rgba(255, 255, 255, 0.25);
+  }
+  
+  #prev-slide svg,
+  #next-slide svg {
+    width: 20px;
+    height: 20px;
+  }
+}
 
 
 
