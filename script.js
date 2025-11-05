@@ -90,7 +90,7 @@ document.addEventListener("DOMContentLoaded", function() {
 
 document.addEventListener("DOMContentLoaded", function() {
   const images = [
-    "./assets/images for makeup/download (12).jpeg",
+    "./assets/images for makeup/makeup banner.jpg",
     "./assets/imags for hair and logos/wigtwo.jpeg",
     "./assets/images for nails/download.jpeg"
   ];
